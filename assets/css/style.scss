@@ -1,0 +1,49 @@
+---
+---
+
+@import "jekyll-theme-time-machine";
+
+// The theme fixes the column at 675px. Change this one value to taste.
+$content-width: 900px;
+
+.wrapper {
+  width: auto;
+  max-width: $content-width;
+  padding: 0 16px;
+}
+
+.current-section {
+  width: min(#{$content-width}, calc(100% - 42px));
+  margin-left: 0;
+  transform: translateX(-50%);
+}
+
+.markdown-body table {
+  width: calc(100% + 40px);
+}
+
+.download-bar {
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.download-bar .inner a {
+  color: #fff;
+  margin-right: 16px;
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+}
+
+.post-meta {
+  color: #777;
+  font-size: 13px;
+}
+
+.ai-disclosure {
+  background: #fff8e1;
+  border-left: 4px solid #e0a800;
+  padding: 8px 12px;
+}

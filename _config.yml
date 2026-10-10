@@ -1,0 +1,22 @@
+title: The Dog Ate My Typewriter
+description: >-
+  Casual stories I find while working. Useful or not.
+github_username: the-guish
+
+url: https://the-guish.github.io
+baseurl: /the-dog-ate-my-typewriter
+
+# Browse themes and swap this line (see README).
+theme: jekyll-theme-time-machine
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+permalink: /:year/:month/:day/:title/
+
+# Kept in the repository only, never on the site.
+exclude:
+  - README.md
+  - notebooks/
+  - Gemfile
+  - Gemfile.lock
