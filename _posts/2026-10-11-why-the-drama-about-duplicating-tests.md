@@ -398,4 +398,4 @@ than one review thread.
 >
 > Architectural choices cannot blindly be the first default offered, as they require more upfront investment from the human in choosing the right framework and goals, based on the full context they know.
 >
-> AI can help a lot in setting a project up for success and keeping it in line over time, but you need to understand what your project needs and explicitly ask for it.
+> AI and SDLC tools can help a lot in setting a project up for success and keeping it in line over time, but you need to understand what your project needs and explicitly ask for it.
