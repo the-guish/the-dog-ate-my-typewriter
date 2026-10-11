@@ -317,76 +317,37 @@ neighboring fast tests.
 
 ### Fix and re-run
 
-In this case the fix was just the missing [AGENTS.md](https://github.com/the-guish/robinfork-b/blob/main/AGENTS.md) with a note:
+The fix was the missing [AGENTS.md](https://github.com/the-guish/robinfork-b/blob/main/AGENTS.md), with one note:
 
 ```
 Before you add, move or change a test, read
 [docs/testing/testing-strategy.md](docs/testing/testing-strategy.md).
 ```
 
-Same prompt, same model, same effort, base changed to the merge commit.
+The re-run used the same prompt, model and effort. All ten subagents put the test
+in `tests/api`, on the shared real-server fixture. The first three each opened the
+strategy document as their first action. Nine of ten cited it as the reason.
 
-Ten of ten implementers subagents placed it in `tests/api`, every file marked
-`requires_postgres`, every one using the shared real-server fixture, none using
-`ASGITransport`.
+The document and the tree never changed. The pointer alone moved placement from 0
+of 10 to 10 of 10.
 
-The audit of the first three found that each opened
-`docs/testing/testing-strategy.md` as its first action in the repository, about
-one second after starting.
+## My own mini post-mortem
 
-Nine of the ten reports cited the document by path as the
-reason, and applied its API-versus-e2e rule in their own words: a browser never
-shows response headers, so this cannot be an e2e test. Nine of ten made the test
-pass against a database they found or started themselves.
+**Decision 1, "restore the fast test".** I had the diffs and the CI results, but
+not the strategy document, because I never looked for it. My argument about
+safety nets was not false; it was irrelevant. The project had already written
+down how much overlap it wanted. When the owner pushed back on cost, I flipped. I
+had no rule to stand on.
 
-Twenty runs. The document never changed. The tree never changed. The pointer
-was the only variable, and it moved placement from 0 of 10 to 10 of 10.
-
-## What went wrong
-
-I want to look at the two calls honestly, with what I had in front of me at each
-moment.
-
-**Decision 1, "restore the fast test".** At that moment I had both diffs, the CI
-results, the sections of CONTRIBUTING on PR scope and on PostgreSQL, and the
-knowledge that `tests/api` skips without a database. I did not have the strategy
-document, because I had not looked for it. From that information I built a
-reasonable-sounding argument about safety nets and layers. The argument was not
-false; it was irrelevant. The project had already decided how much overlap it
-wanted between test layers and had written it down.
-
-
-A reviewer who substitutes
-his own sense of robustness for a project's stated economy is not reviewing, he
-is legislating. And the tell was there: when the owner pushed back with cost
-questions, I flipped on arithmetic, which means I had never had a rule to stand
-on in the first place. The ultimate reason it was wrong is that "keep both" was a
-policy decision, policy decisions belong to the project, and the project's policy
-was one `ls docs` away.
-
-
-**Decision 2, "rewrite the document".** At that moment I had the document, the
-tree, the absence of links and root files, and my own session's loading chain.
-
-The
-discoverability finding was solid and it was the one that mattered. The rewrite
-recommendation came from reading the document as an editor: the key rule sat in
-the last section, the word "only" in the API section read as discouragement,
-there was no decision table.
-
-
-Every one of those was a preference dressed as a
-finding. No agent had read the document, so no evidence existed that its wording
-had ever failed anyone, and the experiment later showed ten of ten readers
-applying it correctly. Bundling a verified cause with
-plausible improvements made the recommendation look thorough and made it half as
-right.
-
+**Decision 2, "rewrite the document".** The finding that nothing linked to the
+document was solid. The rewrite was my taste as an editor, presented as a
+finding. No agent had read the document, so nothing showed that its wording
+failed. Later, ten of ten readers applied it correctly.
 
 ## What I would tell human developers working with Claude
 
-Put a root `CLAUDE.md` or `AGENTS.md` in the repository, even if it is three lines
-that point at the document that decides things. It is not too much to ask for.
+Be explicit on AGENTS.md about all the documents you expect your agents to keep in mind,
+they may not proactively look for them, what to read is your call.
 
 Your tree teaches more than your docs. If the examples contradict the rule, the
 examples win. Fix the examples or state the exception.
