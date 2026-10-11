@@ -587,3 +587,13 @@ Known limits: `PY_TEST_FN` also matches helper names such as `def testing_x(`; p
 - `src/sentry/testutils` ships inside the production package but is counted as helpers and excluded from production code.
 - The frontend for the private SaaS layer (`static/gsApp`, `static/gsAdmin`) is counted with the frontend; its backend and its acceptance tests are in the private `getsentry` repository and not measured.
 - Leads that did not verify as stated: `region_silo_test` no longer exists (renamed `cell_silo_test`, 2026-03); `fixtures/js-stubs` no longer exists (removed 2024-05-28, #71612; the docs still point to it); `django_db_all` is a decorator, not a registered mark; `requires_snuba`/`requires_kafka` are `usefixtures` marks that fail rather than skip; there is no `codecov.yml` and no Codecov status check at the snapshot, and no use of Codecov test analytics in Sentry's own CI was found; Celery is no longer part of the stack. Not found: a public design document for the silo test machinery (the blog post [43] is the closest primary account), the reasons for removing Percy and the 2023 visual snapshots (the latter sit in a private `getsentry` pull request), a published total runtime of the backend suite, a flake-rate figure, and whether any Codecov status was ever a required branch-protection check (statements in [3c] and [3e] say it was not at those dates).
+
+### Post-measurement note (2026-10-11)
+
+The counting tool used for this report dropped every directory named `build`
+at any depth. In this snapshot that removed seven production files under
+`src/sentry/build/`, 185 code lines in total, from the production side of the
+test-to-code ratio. No test lines were affected and no ratio moves by more
+than 0.001. The tool now prunes that name at the root only and lists what it
+pruned. The three files under `src/sentry/static/sentry/vendor/` were also
+dropped, which is correct for vendored code.

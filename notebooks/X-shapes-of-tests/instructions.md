@@ -142,6 +142,17 @@ Pin everything, so the next agent can repeat it on another project.
 - **Percentages** are of the category totals, helpers excluded.
 - Save the raw per-file output of the counting tool, with your category
   column added, as `notebooks/X-shapes-of-tests/<project>.counts.csv`.
+- **Tool change, 2026-10-11, after the first five reports.** The counter's
+  default excludes used to drop every directory named `build`, `dist`,
+  `coverage` or `vendor` at any depth, which also dropped real code. They now
+  apply at the root only, and the tool lists every pruned directory on
+  stderr. Read that list. When a nested `vendor` directory holds third-party
+  code, exclude it yourself with `--exclude '*/vendor/*'` and say so. Effect
+  on the five first reports: GitLab recovered its 194 affected files by hand
+  (its appendix); Discourse missed 315 test lines and 333 production lines in
+  its migrations toolkit; Sentry missed 185 production lines under
+  `src/sentry/build`; Airflow and Superset were unaffected. No percentage in
+  any report moves by more than a few hundredths of a point.
 
 ## Sources and evidence
 

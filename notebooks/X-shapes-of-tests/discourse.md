@@ -618,3 +618,15 @@ Other greps, run with `grep -r --include=*_spec.rb` over `spec plugins themes`: 
 - The original author of the theme system-test guide: meta now shows the Discourse account.
 - The commit that made unhandled pretender requests throw.
 - Any coverage gate or coverage discussion by the team.
+
+### Post-measurement note (2026-10-11)
+
+The counting tool used for this report dropped every directory named
+`coverage` at any depth. In this snapshot that removed nine Ruby files under
+`migrations/tooling/.../coverage/`: four specs with 315 code lines and five
+library files with 333 code lines. Both belong to the separate migrations
+toolkit row. Adding them makes that row 18,302 test lines and the whole
+933,211; no share in the tables moves by more than 0.04 points. The tool now
+prunes those names at the root only and lists what it pruned. The nested
+`plugins/discourse-events/vendor/holidays/` tree was also dropped, which is
+correct: it is a vendored third-party gem with its own tests.

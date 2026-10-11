@@ -17,6 +17,16 @@ Usage:
   --exclude   skip paths matching any of these fnmatch globs (added to defaults)
 
 Output is CSV on stdout: path,files,lines,blank,comment,code
+The directories pruned by the exclude globs are listed on stderr, so a
+dropped directory is visible rather than silent.
+
+Default excludes: `.git`, `node_modules`, `__pycache__`, virtualenvs and
+caches at any depth; `build`, `dist`, `coverage` and `vendor` only at the
+root of ROOT, because projects also use those names for real code (GitLab
+has spec/lib/gitlab/ci/build and qa/qa/vendor, Discourse has
+migrations/tooling/.../coverage). Nested vendored code is for the operator
+to judge: add `--exclude '*/vendor/*'` when it holds third-party code.
+Changed 2026-10-11, after the first five reports; see the brief.
 """
 
 import argparse
@@ -33,10 +43,13 @@ DEFAULT_EXT = {
 }
 
 DEFAULT_EXCLUDE = [
+    # unambiguous names, at any depth
     "*/.git/*", ".git/*", "*/node_modules/*", "node_modules/*",
-    "*/__pycache__/*", "*/.venv/*", "*/venv/*", "*/vendor/*", "vendor/*",
-    "*/dist/*", "*/build/*", "*/.tox/*", "*/.mypy_cache/*",
-    "*/.pytest_cache/*", "*.min.js", "*/coverage/*",
+    "*/__pycache__/*", "__pycache__/*", "*/.venv/*", ".venv/*",
+    "*/venv/*", "venv/*", "*/.tox/*", ".tox/*", "*/.mypy_cache/*",
+    ".mypy_cache/*", "*/.pytest_cache/*", ".pytest_cache/*", "*.min.js",
+    # ambiguous names, root level only
+    "build/*", "dist/*", "coverage/*", "vendor/*",
 ]
 
 HASH = {".py", ".pyi", ".rb", ".erb", ".sh", ".bash", ".feature"}
@@ -112,13 +125,19 @@ def main():
 
     agg = defaultdict(lambda: [0, 0, 0, 0, 0])  # files, lines, blank, comment, code
     rows = []
+    pruned = []
 
     for dirpath, dirnames, filenames in os.walk(root):
         rel_dir = os.path.relpath(dirpath, root)
         rel_dir = "" if rel_dir == "." else rel_dir
-        dirnames[:] = [d for d in dirnames
-                       if not any(fnmatch.fnmatch(os.path.join(rel_dir, d) + "/x", g)
-                                  for g in excludes)]
+        keep = []
+        for d in dirnames:
+            rel = os.path.join(rel_dir, d)
+            if any(fnmatch.fnmatch(rel + "/x", g) for g in excludes):
+                pruned.append(rel)
+            else:
+                keep.append(d)
+        dirnames[:] = keep
         for name in filenames:
             ext = os.path.splitext(name)[1].lower()
             if ext not in exts:
@@ -153,6 +172,12 @@ def main():
         for key in sorted(agg):
             a = agg[key]
             print(f"{key},{a[0]},{a[1]},{a[2]},{a[3]},{a[4]}")
+
+    if pruned:
+        print(f"pruned {len(pruned)} director{'y' if len(pruned) == 1 else 'ies'} "
+              f"by exclude globs:", file=sys.stderr)
+        for d in sorted(pruned):
+            print(f"  {d}", file=sys.stderr)
 
 
 if __name__ == "__main__":
