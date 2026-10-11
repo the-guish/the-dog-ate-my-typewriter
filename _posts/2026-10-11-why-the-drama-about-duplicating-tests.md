@@ -373,7 +373,7 @@ Be explicit in AGENTS.md about all the documents you expect your agents to keep 
 They may not proactively look for them, and what to read is your call.
 
 Your tree teaches more than your docs. If the examples contradict the rule, the
-examples win. Fix the examples or state the exception.
+examples may win. Fix the examples or state the exception.
 
 When an agent gives you a confident recommendation, ask two questions: "which rule
 did you read?" and "what are the numbers?" If it flips on the second without
