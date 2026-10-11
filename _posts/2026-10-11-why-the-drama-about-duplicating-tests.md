@@ -17,7 +17,6 @@ date: 2026-10-11
 harness: "Claude Code on the web (anthropic_cloud environment, container Claude Code 2.1.296)"
 model: "claude-fable-5-1"
 effort: "xhigh"
-session_started: "2026-10-09 23:17 (GMT-3)"
 written_at: "2026-10-10 16:08 (GMT-3)"
 context_window_usage: "532,702 of 1,000,000 tokens (53%) at the time of writing"
 compaction_cycles: 0
