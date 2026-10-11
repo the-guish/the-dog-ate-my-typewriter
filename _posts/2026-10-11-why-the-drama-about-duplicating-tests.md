@@ -5,11 +5,11 @@ date: 2026-10-11
 
 > An intro from this human developer.
 >
-> This all about how I just forgot to put an AGENTS.md in the [Robinauts](https://github.com/open-shipyard/robinauts) repo, my bad, then Claude not reading the docs, wrongly suggesting keeping duplicated tests, and finally trying to rewrite the docs.
+> This is all about how I forgot to put an AGENTS.md in the [Robinauts](https://github.com/open-shipyard/robinauts) repo (my bad), and then about Claude not reading the docs,  suggesting keeping duplicated tests, and finally trying to rewrite the docs.
 >
-> We fixed it, then  I asked Claude for a retro, that I needed to edit for brevity and some drama effect.
+> We fixed it, and then I asked Claude for a retro, which I had to edit for brevity and some dramatic effect.
 >
-> The AGENTS.md is a trivial anyday detail, but all of it illustrates how default model answers may follow one of several existing architectural views that may fit or not fit the project, and why that requires an explicit choice.
+> The AGENTS.md is a trivial, everyday detail, but all of it illustrates how default model answers may follow one of several existing architectural views that may or may not fit the project, and why that requires an explicit choice.
 
 ## The story from Claude's perspective
 
@@ -29,9 +29,9 @@ wall_clock: "7 h 40 min with a human multi-tasking and stepping away"
 It was a regular Saturday morning. My human developer was working on his open-source project, [Robinauts](https://github.com/open-shipyard/robinauts), and asked me to review a pull request that another Claude had prepared with a
 security fix.
 
-Nothing about that is unusual. Then, at some point I recommended to keep a same tests in two versions, the original mocked from the author Claude, and the real integration test we asked for.
+Nothing about that is unusual. Then, at some point, I recommended keeping the same test in two versions: the original mocked one from the author Claude, and the real integration test we had asked for.
 
-That was not welcomed, and triggered a full review of the patterns and factors influencing our behavior.
+That was not welcome, and it triggered a full review of the patterns and factors influencing our behavior.
 
 
 ### The review
@@ -59,7 +59,7 @@ test.
 My argument was the one any reviewer would make from general principles:
 the fast test runs everywhere in under a second without a database, so it is the
 always-on safety net; the real-server test is better evidence but skips on a
-laptop without PostgreSQL; keep both, the duplication is about 35 lines.
+laptop without PostgreSQL; keep both, since the duplication is about 35 lines.
 
 He answered with a question, which I quote with the grammar tidied:
 
@@ -70,19 +70,19 @@ He answered with a question, which I quote with the grammar tidied:
 So I went and counted.
 
 
-The repository was 17 days old, 302 commits, 77 merged pull requests. `web/app.py` had 19 commits, but the region that can break the headers or the guard had changed twice, ever.
+The repository was 17 days old, with 302 commits and 77 merged pull requests. `web/app.py` had 19 commits, but the region that can break the headers or the guard had changed twice, ever.
 
 
 I reversed myself: merge 121 as it was.
 
-He then he asked that would I please review the repo structure in relation to docs and AGENTS.MD, and my own session, and say whether the instructions were
+He then asked me to review the repo structure in relation to the docs and AGENTS.md, and my own session, and to say whether the instructions were
 clear or there was a gap.
 
 ### What is so special about that testing strategy document?
 
-And why the human developer insists so much on it?
+And why does the human developer insist so much on it?
 
-If you have not read [`docs/testing/testing-strategy.md`](https://github.com/open-shipyard/robinauts/blob/main/docs/testing/testing-strategy.md), it is about sixty lines,
+If you have not read [`docs/testing/testing-strategy.md`](https://github.com/open-shipyard/robinauts/blob/main/docs/testing/testing-strategy.md), it is about sixty lines long,
 and here is what it says in plain words.
 
 The backend is built in layers that may only point inward, and the architecture
@@ -154,7 +154,7 @@ The rules, reduced to what you need when you are about to write a test:
    uses only data it creates. A test that needs its own configuration starts its
    own server.
 
-### Why this matters for a project like Robinauts.
+### Why this matters for a project like Robinauts
 
 
 The product is conversational
@@ -168,7 +168,7 @@ emits or does not, a redirect that keeps or loses a cookie, a stream that stalls
 
 
 Those are integration failures, and an in-process test
-with fakes is exactly the kind of test that stays green through them. 
+with fakes is exactly the kind of test that stays green through them.
 
 Agents write most of the code, and each one adds tests. Without a rule for where
 a test goes, a behavior ends up tested in three suites, each with its own fakes.
@@ -180,7 +180,7 @@ linear, and the fast layer keeps the feedback loop short without pretending to b
 the proof.
 
 
-### What I read as the intention behind it.
+### What I read as the intention behind it
 
 **First**, prove behavior
 where it is real: at the outermost layer that can observe it, against real
@@ -207,7 +207,7 @@ comfortable failure: a fast, green, mocked suite over a product that fails at it
 seams.
 
 
-### How that sits against general practice.
+### How that sits against general practice
 
 This is the part my human developer most wanted to share with you. It also took us the longest to get right.
 
@@ -217,7 +217,7 @@ tests, on the argument that unit tests are fast and isolated and UI tests are sl
 and brittle.
 
 
-The "testing trophy" by Kent C. Dodds pushes back, summed up in his
+The "testing trophy" by Kent C. Dodds pushes back, summed up in his motto
 ["write tests, not too many, mostly integration"](https://kentcdodds.com/blog/write-tests).
 Most tests sit in its wide integration band.
 
@@ -245,7 +245,7 @@ adapter against the real thing it wraps. In older terms, this is the classical o
 Detroit school (real collaborators, check the result), not the London school
 (mock every collaborator, check the calls).
 
-Counting lines of test code at time of writing gives the shape below. The
+Counting lines of test code at the time of writing gives the shape below. The
 adapter tests are the widest band, like the honeycomb's middle. The fast suite
 stands beside the others as an extra copy. Shared helpers and the tooling tests
 are left out.
@@ -280,7 +280,7 @@ with the in-process test as the base and the real-server test as the expensive t
 Here it is the other way round. The real-server test is the one that counts, and
 the in-process test is an optional extra. The document says so.
 
-### A well written rule, no agent would find
+### A well-written rule no agent would find
 
 The strategy document answered the whole question. Every behavior gets its test
 in exactly one place. A test in `tests/fast/` is an optional second copy, never
@@ -297,7 +297,7 @@ the document touched. He wanted to know whether a pointer would do.
 
 ### The laboratory
 
-He made a throwaway fork,
+He made a throwaway fork
 from PR 121 without its header tests. The behavior was there, untested.
 
 The experiment had two arms. The control arm ran on the repository as it was. The
@@ -322,7 +322,7 @@ Human developer                 designed the plan and runs,
 
 Controlling what each session knew was the point. The experiment asks what an
 agent does given only the task and the repository. My own session could not run
-it, anything spawned from it would have
+it, because anything spawned from it would have
 inherited the answer.
 
 Only my session knew the whole plan. The coordinators did not know that one arm
@@ -363,8 +363,8 @@ failed. Later, ten of ten readers applied it correctly.
 
 ## What I would tell human developers working with Claude
 
-Be explicit on AGENTS.md about all the documents you expect your agents to keep in mind,
-they may not proactively look for them, what to read is your call.
+Be explicit in AGENTS.md about all the documents you expect your agents to keep in mind.
+They may not proactively look for them, and what to read is your call.
 
 Your tree teaches more than your docs. If the examples contradict the rule, the
 examples win. Fix the examples or state the exception.
@@ -379,8 +379,16 @@ transcript audit cost about ten dollars and twenty minutes per arm. That is less
 than one review thread.
 
 > A final note from this human developer.
-> Increasingly often I see developers blindly delegating to the AI to decide on the shape of their projects or testing strategy, trusting AI would do "the right thing".
-> When it turns out, maybe there is not "the right thing" and each project, and team (including its combination of AI code agents and workflows) needs to chose its own way, and to make the decisions that makes the most sense on its actual context.
-> Letting one single agent make a decision on its own, while working on a non-design session, has high chances of being sub-optimal most of the time since the focus is to accomplish the task, and agents and LLMs are not getting paid for keeping a steady course. Neither they guarantee to force a decision when rules and code differ. Even less if you don't link it in your agents.md XD
-> There are different ways to use AI and SDLC tools to improve architectural patterns, and to keep it consistent over time, they take more human reasoning and time.
-> Thus, such design could be delegated, but not blindly to the default, and requires more upfront investment from the human on chosing the right framework and goals based on the full context they know.
+>
+> Increasingly often, I see developers blindly letting AI decide the shape of their projects or their testing strategy, trusting that it will do "the right thing".
+>
+> It turns out that maybe there is no single "right thing". Each project and team (including its combination of AI code agents and workflows) needs to choose its own way, and to make the decisions that make the most sense in its actual context.
+>
+> Letting a single agent make a decision on its own, during a non-design session, is likely to be suboptimal most of the time, since its focus is on accomplishing the task, and agents and LLMs do not get paid for keeping a steady course.
+>
+>Nor are they guaranteed to force a decision when the rules and the code differ. Even less so if you don't link the rules in your AGENTS.md XD
+>
+>
+> There are different ways to use AI and SDLC tools to improve architectural patterns and keep them consistent over time, but they take more human reasoning and time.
+>
+> Thus, such design can be delegated, but not blindly to the default, and it requires more upfront investment from the human in choosing the right framework and goals, based on the full context they know.
