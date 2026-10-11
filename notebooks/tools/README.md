@@ -8,7 +8,12 @@ read. It needs only Python 3.
 ```sh
 python3 notebooks/tools/estimate_length.py _posts/*.md
 python3 notebooks/tools/estimate_length.py _posts/*.md --single-spaced
+python3 notebooks/tools/estimate_length.py --write
 ```
+
+`--write` measures every post in `_posts/` and saves the rounded pages and
+minutes to `_data/lengths.yml`. The post layout shows them under the date. Run
+it after editing a post, before you commit. Nothing runs it for you.
 
 ### Pages
 

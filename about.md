@@ -4,12 +4,14 @@ title: About
 permalink: /about/
 ---
 
-About things I wanted to share with you but I'm lazy or tired to write myself.
-Ideation is mine. Wording is mostly some combination of AI, with some curation
-added to preserve relevance for your dry human eyes. May the gods and history
-forgive us.
+About things I wanted to share with you but I was lazy or tired to write all of it by myself.
 
-{% include ai-disclosure.html %}
+
+Ideation is mine. Wording is mostly some combination of AI, with some curation
+added to preserve relevance for your dry human eyes.
+
+May the gods and history forgive us.
+
 
 ## Raw material
 

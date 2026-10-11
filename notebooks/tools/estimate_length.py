@@ -5,7 +5,9 @@ Pages: the text is typed on US Letter in pica, double-spaced, with 1-inch
 margins. Reading time: prose words at the adult silent-reading rate for
 non-fiction. The README gives the sources for each number.
 
-Usage: python3 estimate_length.py FILE [FILE ...] [--single-spaced]
+Usage:
+  python3 estimate_length.py FILE [FILE ...] [--single-spaced]
+  python3 estimate_length.py --write    # every post into _data/lengths.yml
 """
 
 import argparse
@@ -82,12 +84,43 @@ def typed_lines(markdown: str) -> tuple[list[str], list[str], int]:
     return prose, code, images
 
 
-def estimate(path: Path, single_spaced: bool) -> str:
+REPO = Path(__file__).resolve().parents[2]
+POSTS = REPO / "_posts"
+LENGTHS = REPO / "_data" / "lengths.yml"
+POST_NAME = re.compile(r"^\d{4}-\d{2}-\d{2}-(.+)\.md$")
+
+
+def measure(path: Path, single_spaced: bool = False) -> dict:
     prose, code, images = typed_lines(path.read_text(encoding="utf-8"))
     lines_per_page = LINES_PER_PAGE if single_spaced else LINES_PER_PAGE // 2
-    pages = (len(prose) + len(code)) / lines_per_page
     words = sum(len(line.split()) for line in prose)
-    minutes = words / WORDS_PER_MINUTE
+    return {
+        "prose": prose, "code": code, "images": images, "words": words,
+        "pages": (len(prose) + len(code)) / lines_per_page,
+        "minutes": words / WORDS_PER_MINUTE,
+    }
+
+
+def write_lengths() -> None:
+    """Write every post's pages and minutes for the post layout to show."""
+    lines = ["# Written by notebooks/tools/estimate_length.py --write. Do not edit.\n"]
+    for path in sorted(POSTS.glob("*.md")):
+        slug = POST_NAME.match(path.name)
+        if not slug:
+            continue
+        m = measure(path)
+        pages, minutes = max(1, round(m["pages"])), max(1, round(m["minutes"]))
+        lines.append(f"{slug.group(1)}:\n  pages: {pages}\n  minutes: {minutes}\n")
+        print(f"{path.name}: {pages} pages, {minutes} min")
+    LENGTHS.parent.mkdir(exist_ok=True)
+    LENGTHS.write_text("".join(lines), encoding="utf-8")
+    print(f"wrote {LENGTHS.relative_to(REPO)}")
+
+
+def estimate(path: Path, single_spaced: bool) -> str:
+    m = measure(path, single_spaced)
+    prose, code, images, words = m["prose"], m["code"], m["images"], m["words"]
+    pages, minutes = m["pages"], m["minutes"]
     slow, fast = (words / wpm for wpm in reversed(WORDS_PER_MINUTE_RANGE))
     spacing = "single-spaced" if single_spaced else "double-spaced"
     return "\n".join([
@@ -103,10 +136,17 @@ def estimate(path: Path, single_spaced: bool) -> str:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("files", nargs="+", type=Path)
+    parser.add_argument("files", nargs="*", type=Path)
     parser.add_argument("--single-spaced", action="store_true",
                         help="54 lines a page instead of the manuscript's 27")
+    parser.add_argument("--write", action="store_true",
+                        help="measure every post and write _data/lengths.yml")
     args = parser.parse_args()
+    if args.write:
+        write_lengths()
+        return
+    if not args.files:
+        parser.error("give one or more files, or --write")
     print("\n\n".join(estimate(path, args.single_spaced) for path in args.files))
 
 

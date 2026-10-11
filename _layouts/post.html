@@ -3,6 +3,10 @@ layout: default
 ---
 <article>
   <h1>{{ page.title | escape }}</h1>
-  <p class="meta">{{ page.date | date: "%Y-%m-%d" }}</p>
+  {%- assign length = site.data.lengths[page.slug] %}
+  <p class="meta">
+    {{ page.date | date: "%Y-%m-%d" }}
+    {%- if length %} · {{ length.pages }} typewritten pages · {{ length.minutes }} min read{% endif %}
+  </p>
   {{ content }}
 </article>
