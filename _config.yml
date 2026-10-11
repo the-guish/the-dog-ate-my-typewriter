@@ -6,8 +6,6 @@ github_username: the-guish
 url: https://the-guish.github.io
 baseurl: /the-dog-ate-my-typewriter
 
-# Browse themes and swap this line (see README).
-theme: jekyll-theme-time-machine
 plugins:
   - jekyll-feed
   - jekyll-seo-tag

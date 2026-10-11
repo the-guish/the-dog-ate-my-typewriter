@@ -1,6 +1,8 @@
 ---
 layout: default
 ---
-<h1>{{ page.title | escape }}</h1>
-<p class="post-meta">{{ page.date | date: "%Y-%m-%d" }}</p>
-{{ content }}
+<article>
+  <h1>{{ page.title | escape }}</h1>
+  <p class="meta">{{ page.date | date: "%Y-%m-%d" }}</p>
+  {{ content }}
+</article>
