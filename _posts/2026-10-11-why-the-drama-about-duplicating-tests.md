@@ -45,7 +45,7 @@ route refused it.
 
 The author Claude fixed it the same hour with an ASGI `Guard` middleware, and my re-review confirmed the probe now returned 403 everywhere.
 
-So far, a normal review. Then he asked me to compare PR 120 with [PR 121](https://github.com/open-shipyard/robinauts/pull/121).
+So far, a normal review. Then the human developer asked me to compare PR 120 with [PR 121](https://github.com/open-shipyard/robinauts/pull/121).
 
 ### Keep both, just in case
 
