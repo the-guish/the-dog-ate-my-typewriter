@@ -386,15 +386,16 @@ than one review thread.
 
 > A final note from this human developer.
 >
-> Increasingly often, I see developers blindly letting AI decide the shape of their projects or their testing strategy, trusting that it will do "the right thing".
+> Increasingly often, I see developers letting codebases grow at speed without taking a position on application architecture or clear policies about testing approaches.
 >
-> It turns out that maybe there is no single "right thing". Each project and team (including its combination of AI code agents and workflows) needs to choose its own way, and to make the decisions that make the most sense in its actual context.
+> Code agents may always "add a bunch of tests" with each feature, but that alone is far away of what a project needs to survive in the long term. 
+>
+> Both code agents and humans still need some kind of structure and components boundaries in order to work effectively.
 >
 > Letting a single agent make a decision on its own, during a non-design session, is likely to be suboptimal most of the time, since its focus is on accomplishing the task, and agents and LLMs do not get paid for keeping a steady course in the long term.
 >
 >Nor are they guaranteed to force a decision when the rules and the code differ. Even less so if you don't link the rules in your AGENTS.md XD
 >
+> Architectural choices cannot be blindly the first default offered, as it requires more upfront investment from the human in choosing the right framework and goals, based on the full context they know.
 >
-> There are different ways to use AI and SDLC tools to improve architectural patterns and keep them consistent over time, but they take more human reasoning and time.
->
-> Thus, such design can be delegated, but not blindly to the default, and it requires more upfront investment from the human in choosing the right framework and goals, based on the full context they know.
+> AI can help a lot in setting a project for success and keep it in-line over time, but you need to understand what your projec needs and explicitly ask for it.
