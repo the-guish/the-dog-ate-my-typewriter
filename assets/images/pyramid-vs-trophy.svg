@@ -7,11 +7,6 @@
     text.on-main { fill: #fff; font-weight: bold; }
     text.caption { font-size: 15px; font-weight: bold; }
     text.note { font-size: 12px; fill: #666; }
-    @media (prefers-color-scheme: dark) {
-      .shape { stroke: #ddd; }
-      .light { fill: #262626; } .mid { fill: #444; } .main { fill: #ccc; }
-      text { fill: #ddd; } text.on-main { fill: #111; } text.note { fill: #999; }
-    }
   </style>
   <polygon class="shape light" points="160,20 203,100 117,100"/>
   <text x="160" y="80" font-size="13">UI</text>

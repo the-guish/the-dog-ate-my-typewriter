@@ -1,4 +1,5 @@
 :root {
+  color-scheme: light;
   --page: #e4e4e0;
   --sheet: #fbfbf8;
   --text: #222;
@@ -9,17 +10,6 @@
   --width: 82ch;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --page: #121212;
-    --sheet: #1c1c1c;
-    --text: #ddd;
-    --muted: #999;
-    --link: #8ab4f8;
-    --rule: #333;
-    --code: #262626;
-  }
-}
 
 * { box-sizing: border-box; }
 
