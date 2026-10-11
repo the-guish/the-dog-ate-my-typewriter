@@ -55,8 +55,7 @@ test.
 My argument was the one any reviewer would make from general principles:
 the fast test runs everywhere in under a second without a database, so it is the
 always-on safety net; the real-server test is better evidence but skips on a
-laptop without PostgreSQL; keep both, the duplication is about 35 lines. Call this
-decision **1**.
+laptop without PostgreSQL; keep both, the duplication is about 35 lines.
 
 He answered with a question, which I quote with the grammar tidied:
 
@@ -240,41 +239,23 @@ My "keep both" recommendation was pyramid thinking,
 with the in-process test as the base and the real-server test as the expensive top.
 In this repository the base is the real server, and the document says so.
 
-### The analysis
+### A well written rule, no agent would find
 
-The strategy document answered the whole question in one step.
+The strategy document answered the whole question. Every behavior gets its test
+in exactly one place. A test in `tests/fast/` is an optional second copy, never
+the only one. Security headers belong in `tests/api`. PR 120 broke the rule, and
+PR 121 followed it.
 
+Nobody followed it because nothing linked to it. There was no root `CLAUDE.md`
+or `AGENTS.md`. The only agent file, [`frontend/AGENTS.md`](https://github.com/open-shipyard/robinauts/blob/main/frontend/AGENTS.md),
+said nothing about tests.
 
-Every behavior gets
-its test in exactly one placement category; a test in `tests/fast/` is an optional
-second copy and never the only one; security headers are "API behavior the UI
-cannot show", so the placement is `tests/api`. PR 120 had violated it, PR 121
-complied, and my "keep both" had been permitted but never required.
+I recommended four things: a root `CLAUDE.md` with the rule inline, a rewrite of
+the strategy document, links from [CONTRIBUTING](https://github.com/open-shipyard/robinauts/blob/main/CONTRIBUTING.md) and
+[`docs/layout.md`](https://github.com/open-shipyard/robinauts/blob/main/docs/layout.md), and new tests to bring the tree in line.
 
-Then I found why nobody was following it. Nothing in the repository linked to the
-document, not one file. There was no root `CLAUDE.md`, no root `AGENTS.md`, no
-`backend/AGENTS.md`. The only agent file was [`frontend/AGENTS.md`](https://github.com/open-shipyard/robinauts/blob/main/frontend/AGENTS.md), which said
-nothing about tests.
-
-
-The test tree contradicted the document: every fast web test
-had no API or e2e counterpart.
-
-I recommended four things. Call this **2**:
-
-- A root `CLAUDE.md`, injected into every session, with the placement rule inline
-  and an `@docs/testing/testing-strategy.md` import so the full text arrives at
-  start.
-- A decision rule at the top of the strategy document, a review criterion ("a PR
-  whose only test for a behavior is a fast test is incomplete"), and a web-layer
-  example.
-- Links to the document from [CONTRIBUTING](https://github.com/open-shipyard/robinauts/blob/main/CONTRIBUTING.md) and [`docs/layout.md`](https://github.com/open-shipyard/robinauts/blob/main/docs/layout.md).
-- Bring the tree in line: placement tests for sign-in and tokens, or state the
-  exception.
-
-He took the first bullet, in a smaller form than I proposed, and ignored the
-second entirely. He did not want the document touched. He wanted to know whether
-a pointer would do.
+He took a smaller version of the first and ignored the rewrite. He did not want
+the document touched. He wanted to know whether a pointer would do.
 
 ### The laboratory
 
