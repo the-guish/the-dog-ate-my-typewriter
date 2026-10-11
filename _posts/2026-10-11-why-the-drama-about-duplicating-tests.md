@@ -3,15 +3,15 @@ title: "why the drama about duplicated tests?"
 date: 2026-10-11
 ---
 
-## An intro from this human developer
+> An intro from this human developer.
+>
+> This all about how I just forgot to put an AGENTS.md in the [Robinauts](https://github.com/open-shipyard/robinauts) repo, my bad, then Claude not reading the docs, wrongly suggesting keeping duplicated tests, and finally trying to rewrite the docs.
+>
+> We fixed it, then  I asked Claude for a retro, that I needed to edit for brevity and some drama effect.
+>
+> The AGENTS.md is a trivial anyday detail, but all of it illustrates how default model answers may follow one of several existing architectural views that may fit or not fit the project, and why that requires an explicit choice.
 
-This all about how I just forgot to put an AGENTS.md in the [Robinauts](https://github.com/open-shipyard/robinauts) repo, my bad, then Claude not reading the docs, wrongly suggesting keeping duplicated tests, and finally trying to rewrite the docs.
-
-We fixed it, then  I asked Claude for a retro, that I needed to edit for brevity and some drama effect.
-
-The AGENTS.md is a trivial anyday detail, but all of it illustrates how default model answers may follow one of several existing architectural views that may fit or not fit the project, and why that requires an explicit choice.
-
-## Claude's own version
+## The story from Claude's perspective
 
 ```yaml
 harness: "Claude Code on the web (anthropic_cloud environment, container Claude Code 2.1.296)"
@@ -209,6 +209,8 @@ seams.
 
 ### How that sits against general practice.
 
+This is the part my human developer most wanted to share with you. It also took us the longest to get right.
+
 The best-known posture is the [test pyramid](https://www.testrail.com/blog/testing-pyramid/)
 (Mike Cohn, 2009): many unit tests at the base, fewer service tests, very few UI
 tests, on the argument that unit tests are fast and isolated and UI tests are slow
@@ -224,6 +226,13 @@ Most tests sit in its wide integration band.
 Spotify's ["testing honeycomb"](https://engineering.atspotify.com/2018/1/testing-of-microservices)
 makes a similar case for microservices. Integration tests are the wide middle.
 Implementation-detail tests and tests that depend on other services are both thin.
+
+The post closes by checking the honeycomb against what Spotify wants from tests.
+Realistic fixtures give confidence that a service does what it should, whatever
+its code looks like inside. Testing from the edges makes maintenance easier, so
+the team can clean up the code without fear of breaking it. The cost they admit
+is precision. Feedback is fast enough, but a failing test sometimes sends them
+through the service's stack trace instead of pointing at one assertion.
 
 ![Spotify's testing honeycomb: mostly integration tests, few integrated and implementation-detail tests]({{ '/assets/images/testing-honeycomb.svg' | relative_url }})
 
@@ -249,7 +258,9 @@ confidence per test, cost of maintenance, and flakiness.
 
 The pyramid buys speed and isolation, and covers the seams with a few tests at the
 top. Robinauts buys tests that go through the API or the browser, so they survive
-changes to the internals. It pays three ways. The suite is slower. On the day of
+changes to the internals.
+
+It pays three ways. The suite is slower. On the day of
 this story, CI ran 582 backend tests in under three minutes and 11 browser tests
 in three more. Every run needs a database. And real servers have more moving
 parts, so they can flake. The fast suite softens the wait, because it runs first
@@ -366,7 +377,3 @@ answering the first, it never had the rule. Send it to find it.
 Measuring is cheap. A throwaway fork, one prompt, ten parallel subagents, and a
 transcript audit cost about ten dollars and twenty minutes per arm. That is less
 than one review thread.
-
----
-
-Raw material for this post: [notebooks/why-the-drama-about-duplicating-tests](https://github.com/the-guish/the-dog-ate-my-typewriter/tree/main/notebooks/why-the-drama-about-duplicating-tests).
