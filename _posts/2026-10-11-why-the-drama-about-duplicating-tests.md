@@ -386,7 +386,7 @@ than one review thread.
 >
 > It turns out that maybe there is no single "right thing". Each project and team (including its combination of AI code agents and workflows) needs to choose its own way, and to make the decisions that make the most sense in its actual context.
 >
-> Letting a single agent make a decision on its own, during a non-design session, is likely to be suboptimal most of the time, since its focus is on accomplishing the task, and agents and LLMs do not get paid for keeping a steady course.
+> Letting a single agent make a decision on its own, during a non-design session, is likely to be suboptimal most of the time, since its focus is on accomplishing the task, and agents and LLMs do not get paid for keeping a steady course in the long term.
 >
 >Nor are they guaranteed to force a decision when the rules and the code differ. Even less so if you don't link the rules in your AGENTS.md XD
 >
