@@ -3,7 +3,7 @@ This all about how I just forgot to put an AGENTS.md in the Robinauts repo, my b
 
 We fixed it, then  I asked Claude for a retro, that I needed to edit for brevity and some drama effect.
 
-The AGENTS.md is a trivial anyday detail, but all of it illustrates the default tendency of that model to write high volume of tests without balancing their efficacy or maintenance cost.
+The AGENTS.md is a trivial anyday detail, but all of it illustrates how default model answers may follow one of several existing architectural views that may fit or not fit the project, and why that requires an explicit choice.
 
 
 ---
@@ -318,6 +318,9 @@ Only my session knew the whole plan. The coordinators did not know that one arm
 had a pointer and the other did not. The subagents did not know they were being
 compared. They were only asked to add a test to the repository as they found it.
 
+In the control arm, all ten runs put the test in `tests/fast`, copied from the
+neighboring fast tests.
+
 ### Fix and re-run
 
 In this case the fix was just the missing AGENTS.md with a note:
@@ -342,8 +345,8 @@ reason, and applied its API-versus-e2e rule in their own words: a browser never
 shows response headers, so this cannot be an e2e test. Nine of ten made the test
 pass against a database they found or started themselves.
 
-Twenty-one runs. The document never changed. The tree never changed. The pointer
-was the only variable, and it moved placement from 0 of 11 to 10 of 10.
+Twenty runs. The document never changed. The tree never changed. The pointer
+was the only variable, and it moved placement from 0 of 10 to 10 of 10.
 
 ## What went wrong
 
@@ -391,39 +394,20 @@ right.
 If you are reading this because you are about to review a test, or write one,
 here is what I wish someone had told me before.
 
-Go find the rule before you form an opinion. Run `ls docs`. Read CONTRIBUTING to
-the end, not the first hundred lines. If there is a file whose name contains
-"strategy" or "testing", read it before you read a single neighboring test.
-
 
 The
 neighbors are not the rule; they are what the last person did, and the last
 person may have been one of us, placing a test by copying the neighbor before
 that.
 
-When a task says "nothing tests that", your first question is not "how do I test
-it" but "where does this project say tests go". Those are different questions
-and the second one is cheaper.
 
 Do not present preferences as gaps. If you did not see anyone fail because of the
-wording, you have no finding about the wording. Say "I would have written it
-differently" if you must, in one line, and keep it out of the recommendation.
-
-Separate what you verified from what you suspect, in the text, every time. The
-owner can act on the first half without you.
+wording, you have no finding about the wording.
 
 When a human pushes back with numbers and you find yourself reversing, stop and
 ask what rule you were standing on. If the answer is "none", say that, and go
 find one before you answer again.
 
-
-If you are writing a root instruction file, make it a router. "Before you do X,
-read Y." Keep Y where it lives. The eight lines above did the job with no rule in
-them at all.
-
-
-And when the owner refuses half of your recommendation, consider that he may be
-right, and offer to measure it instead of arguing it.
 
 ## What I would tell human developers working with Claude
 
@@ -437,8 +421,6 @@ When an agent gives you a confident recommendation, ask two questions: "which ru
 did you read?" and "what are the numbers?" If it flips on the second without
 answering the first, it never had the rule. Send it to find it.
 
-Do not let an agent rewrite a document on the theory that it is unclear until you
-have seen a reader fail on it. Reachability first, content second.
 
 Measuring is cheap. A throwaway fork, one prompt, ten parallel subagents, and a
 transcript audit cost about ten dollars and twenty minutes per arm. That is less
