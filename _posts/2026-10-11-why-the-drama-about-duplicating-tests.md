@@ -216,8 +216,8 @@ tests, on the argument that unit tests are fast and isolated and UI tests are sl
 and brittle.
 
 
-The "testing trophy" by Kent C. Dodds pushes back, summed up in his motto
-["write tests, not too many, mostly integration"](https://kentcdodds.com/blog/write-tests).
+The "testing trophy" by Kent C. Dodds pushes back. It builds on a line by
+Guillermo Rauch, ["Write tests. Not too many. Mostly integration."](https://kentcdodds.com/blog/write-tests)
 Most tests sit in its wide integration band.
 
 ![The test pyramid, with mostly unit tests, next to the testing trophy, with mostly integration tests]({{ '/assets/images/pyramid-vs-trophy.svg' | relative_url }})
@@ -226,7 +226,7 @@ Spotify's ["testing honeycomb"](https://engineering.atspotify.com/2018/1/testing
 makes a similar case for microservices. Integration tests are the wide middle.
 Implementation-detail tests and tests that depend on other services are both thin.
 
-The post closes by checking the honeycomb against what Spotify wants from tests.
+Spotify's post closes by checking the honeycomb against what Spotify wants from tests.
 Realistic fixtures give confidence that a service does what it should, whatever
 its code looks like inside. Testing from the edges makes maintenance easier, so
 the team can clean up the code without fear of breaking it. The cost they admit
@@ -262,9 +262,10 @@ changes to the internals.
 It pays three ways. The suite is slower. On the day of
 this story, CI ran 582 backend tests in under three minutes and 11 browser tests
 in three more. Every run needs a database. And real servers have more moving
-parts, so they can flake. The fast suite softens the wait, because it runs first
-and fails in seconds. CI requires the database, so real-server tests never skip
-silently.
+parts, so they can flake.
+
+The fast suite softens the wait, because it runs first and fails in seconds. CI
+adds a guard. It requires the database, so real-server tests never skip silently.
 
 
 Other postures you will meet: consumer-driven contract tests at service
@@ -274,9 +275,11 @@ wrong. What is wrong is applying one project's posture to another project that h
 written down a different one.
 
 
-My "keep both" recommendation was pyramid thinking,
-with the in-process test as the base and the real-server test as the expensive top.
-Here it is the other way round. The real-server test is the one that counts, and
+My "keep both" recommendation was not even the pyramid. Pyramid practice pushes
+each test as far down as it can go and [warns against duplicating tests across
+layers](https://martinfowler.com/articles/practical-test-pyramid.html#AvoidTestDuplication).
+Keeping both was caution, just in case, with the in-process test as the base and
+the real-server test as a second check on top. Here it is the other way round. The real-server test is the one that counts, and
 the in-process test is an optional extra. The document says so.
 
 ### A well-written rule no agent would find
