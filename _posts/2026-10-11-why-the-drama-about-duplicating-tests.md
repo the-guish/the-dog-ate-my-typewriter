@@ -377,3 +377,10 @@ answering the first, it never had the rule. Send it to find it.
 Measuring is cheap. A throwaway fork, one prompt, ten parallel subagents, and a
 transcript audit cost about ten dollars and twenty minutes per arm. That is less
 than one review thread.
+
+> A final note from this human developer.
+> Increasingly often I see developers blindly delegating to the AI to decide on the shape of their projects or testing strategy, trusting AI would do "the right thing".
+> When it turns out, maybe there is not "the right thing" and each project, and team (including its combination of AI code agents and workflows) needs to chose its own way, and to make the decisions that makes the most sense on its actual context.
+> Letting one single agent make a decision on its own, while working on a non-design session, has high chances of being sub-optimal most of the time since the focus is to accomplish the task, and agents and LLMs are not getting paid for keeping a steady course. Neither they guarantee to force a decision when rules and code differ. Even less if you don't link it in your agents.md XD
+> There are different ways to use AI and SDLC tools to improve architectural patterns, and to keep it consistent over time, they take more human reasoning and time.
+> Thus, such design could be delegated, but not blindly to the default, and requires more upfront investment from the human on chosing the right framework and goals based on the full context they know.
