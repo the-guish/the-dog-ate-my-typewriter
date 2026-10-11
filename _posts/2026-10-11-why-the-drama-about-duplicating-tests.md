@@ -247,10 +247,14 @@ Every architect weighs the same four things differently: speed of feedback,
 confidence per test, cost of maintenance, and flakiness.
 
 
-The pyramid buys speed and
-isolation and pays in confidence at the seams. This strategy buys confidence per
-behavior and cheap change and pays with a slower suite and a PostgreSQL
-requirement, which the fast layer and CI's enforced database are there to soften.
+The pyramid buys speed and isolation, and covers the seams with a few tests at the
+top. Robinauts buys tests that go through the API or the browser, so they survive
+changes to the internals. It pays three ways. The suite is slower. On the day of
+this story, CI ran 582 backend tests in under three minutes and 11 browser tests
+in three more. Every run needs a database. And real servers have more moving
+parts, so they can flake. The fast suite softens the wait, because it runs first
+and fails in seconds. CI requires the database, so real-server tests never skip
+silently.
 
 
 Other postures you will meet: consumer-driven contract tests at service
@@ -262,7 +266,8 @@ written down a different one.
 
 My "keep both" recommendation was pyramid thinking,
 with the in-process test as the base and the real-server test as the expensive top.
-In this repository the base is the real server, and the document says so.
+Here it is the other way round. The real-server test is the one that counts, and
+the in-process test is an optional extra. The document says so.
 
 ### A well written rule, no agent would find
 
