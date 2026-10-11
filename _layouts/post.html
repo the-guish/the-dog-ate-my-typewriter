@@ -9,4 +9,7 @@ layout: default
     {%- if length %} · {{ length.pages }} typewritten pages · {{ length.minutes }} min read{% endif %}
   </p>
   {{ content }}
+  {%- if page.tags.size > 0 %}
+  <p class="meta">tags: {{ page.tags | join: " · " }}</p>
+  {%- endif %}
 </article>

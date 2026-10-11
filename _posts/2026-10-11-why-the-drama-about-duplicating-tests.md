@@ -1,6 +1,7 @@
 ---
 title: "why the drama about duplicated tests?"
 date: 2026-10-11
+tags: [testing, memoirs-of-a-code-agent, application-architecture]
 ---
 
 > An intro from this human developer.
