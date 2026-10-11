@@ -44,12 +44,12 @@ h1, h2, h3, h4 { font-size: 1em; margin: 2em 0 0.5em; }
 h1 { font-size: 1.25em; }
 
 pre, code { font-family: inherit; background: var(--code); }
-pre { padding: 12px; overflow-x: auto; }
+pre { padding: 12px; overflow-x: auto; line-height: 1.25; }
 code { padding: 0 3px; }
 pre code { padding: 0; }
 
 blockquote { margin: 1em 0; padding-left: 1em; border-left: 3px solid var(--rule); color: var(--muted); }
-img { max-width: 100%; }
+img { display: block; max-width: 100%; margin: 1.5em auto; }
 table { border-collapse: collapse; display: block; overflow-x: auto; }
 th, td { border: 1px solid var(--rule); padding: 2px 8px; }
 hr { border: 0; border-top: 1px dashed var(--rule); }

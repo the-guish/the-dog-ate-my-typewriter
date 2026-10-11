@@ -3,11 +3,15 @@ title: "why the drama about duplicated tests?"
 date: 2026-10-11
 ---
 
+## An intro from this human developer
+
 This all about how I just forgot to put an AGENTS.md in the [Robinauts](https://github.com/open-shipyard/robinauts) repo, my bad, then Claude not reading the docs, wrongly suggesting keeping duplicated tests, and finally trying to rewrite the docs.
 
 We fixed it, then  I asked Claude for a retro, that I needed to edit for brevity and some drama effect.
 
 The AGENTS.md is a trivial anyday detail, but all of it illustrates how default model answers may follow one of several existing architectural views that may fit or not fit the project, and why that requires an explicit choice.
+
+## Claude's own version
 
 ```yaml
 harness: "Claude Code on the web (anthropic_cloud environment, container Claude Code 2.1.296)"
@@ -87,37 +91,48 @@ rules in [`docs/architecture/rules.md`](https://github.com/open-shipyard/robinau
 The strategy sorts tests by *what they prove*, not by how fast they run. Each category answers one question, and each behavior is proved in exactly one of them.
 
 ```
-                 THE LAYERS                                 THE TEST CATEGORIES
-                 (imports point inward only)                (each behavior proved in exactly one)
+ THE LAYERS                            THE TEST CATEGORIES
+ (imports point inward only)           (one per behavior)
 
-   ┌────────────────────────────────┐
-   │ browser: frontend/ (the chat)  │ ◄────────  tests/e2e/      master journeys (the daily paths) and
-   └───────────────┬────────────────┘             special cases; built UI, Chromium, a server, PostgreSQL
-                   │ HTTP
-   ┌───────────────▼────────────────┐
-   │ web/  routes, sign-in, headers,│ ◄────────  tests/api/      a real `robinauts start`, over HTTP, with
-   │       guard, CLI, worker       │             PostgreSQL and a fake model server; only for what the
-   └───────────────┬────────────────┘             UI cannot show, or hardening against defective clients
-                   │
-   ┌───────────────▼────────────────┐
-   │ controller/  application, core,│ ◄────────  tests/unit/     pure functions and stateless logic;
-   │              ports, composition│             needs nothing
-   └───────┬────────────────┬───────┘
-           │                │
-   ┌───────▼───────┐ ┌──────▼────────────────┐
-   │ controller/   │ │ agent_engines/        │ ◄──  tests/adapters_free/    one adapter against its real
-   │ adapters/     │ │ echo, langchain,      │       dependency or a stand-in (PostgreSQL, a local model)
-   │ postgres,     │ │ pydantic_ai           │ ◄──  tests/adapters_metered/ the paid providers; by hand only
-   │ memory        │ │                       │
-   └───────────────┘ └───────────────────────┘
+ ┌────────────────────────────────┐
+ │ browser: frontend/ (the chat)  │ ◄── tests/e2e/
+ └───────────────┬────────────────┘
+                 │ HTTP
+ ┌───────────────▼────────────────┐
+ │ web/  routes, sign-in, headers,│ ◄── tests/api/
+ │       guard, CLI, worker       │
+ └───────────────┬────────────────┘
+                 │
+ ┌───────────────▼────────────────┐
+ │ controller/  application, core,│ ◄── tests/unit/
+ │              ports, composition│
+ └───────┬────────────────┬───────┘
+         │                │
+ ┌───────▼───────┐ ┌──────▼────────────────┐
+ │ controller/   │ │ agent_engines/        │ ◄── tests/adapters_free/
+ │ adapters/     │ │ echo, langchain,      │
+ │ postgres,     │ │ pydantic_ai           │ ◄── tests/adapters_metered/
+ │ memory        │ │                       │
+ └───────────────┘ └───────────────────────┘
 
-   everything above, in one process, with   ◄──  tests/fast/     an extra layer that overlaps the others on
-   the in-memory store and the echo engine                       purpose: cheap, runs first, catches the
-                                                                 obvious early; never the only test of a behavior
-
-   the repository itself: scripts/, the     ◄──  tests/tooling/  the layer rules above, the licence gate,
-   layer rules, the gates                                        the check scripts
+ everything above, in one process      ◄── tests/fast/
+ the repository itself                 ◄── tests/tooling/
 ```
+
+- `tests/e2e/`: master journeys (the daily paths) and special cases, on the
+  built UI, Chromium, a server and PostgreSQL.
+- `tests/api/`: a real `robinauts start` over HTTP, with PostgreSQL and a fake
+  model server. Only for what the UI cannot show, or hardening against defective
+  clients.
+- `tests/unit/`: pure functions and stateless logic. Needs nothing.
+- `tests/adapters_free/`: one adapter against its real dependency or a stand-in
+  (PostgreSQL, a local model).
+- `tests/adapters_metered/`: the paid providers. By hand only.
+- `tests/fast/`: everything above in one process, with the in-memory store and
+  the echo engine. An extra layer that overlaps the others on purpose: cheap,
+  runs first, catches the obvious early. Never the only test of a behavior.
+- `tests/tooling/`: the repository itself: the layer rules above, the licence
+  gate, the check scripts.
 
 The rules, reduced to what you need when you are about to write a test:
 
@@ -194,7 +209,7 @@ seams.
 
 ### How that sits against general practice.
 
-The best-known posture is the test pyramid
+The best-known posture is the [test pyramid](https://www.testrail.com/blog/testing-pyramid/)
 (Mike Cohn, 2009): many unit tests at the base, fewer service tests, very few UI
 tests, on the argument that unit tests are fast and isolated and UI tests are slow
 and brittle.
@@ -205,9 +220,11 @@ for pure logic; the primary contracts are the API and e2e suites.
 
 
 That is closer to
-the "testing trophy" (Kent C. Dodds: "write tests, not too many, mostly
-integration") and to the "honeycomb" that some service teams describe, where the
+the "testing trophy" (Kent C. Dodds: ["write tests, not too many, mostly
+integration"](https://kentcdodds.com/blog/write-tests)) and to the "honeycomb" that some service teams describe, where the
 integration layer is the wide one and both unit and e2e are thin.
+
+![The test pyramid, with mostly unit tests, next to the testing trophy, with mostly integration tests]({{ '/assets/images/pyramid-vs-trophy.svg' | relative_url }})
 
 
 The adapters categories echo hexagonal architecture: test the core as pure functions, test each
