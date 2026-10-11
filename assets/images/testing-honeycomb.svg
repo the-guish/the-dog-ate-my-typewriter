@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 330" width="320" height="330" font-family="ui-monospace, Menlo, Consolas, 'Liberation Mono', monospace" role="img" aria-labelledby="t">
+  <title id="t">Spotify's testing honeycomb: mostly integration tests, few integrated and implementation-detail tests</title>
+  <style>
+    .shape { stroke: #222; stroke-width: 1.5; stroke-linejoin: round; }
+    .light { fill: #eeeeea; } .mid { fill: #c8c8c4; } .main { fill: #555; }
+    text { fill: #222; text-anchor: middle; dominant-baseline: middle; }
+    text.on-main { fill: #fff; font-weight: bold; }
+    text.caption { font-size: 15px; font-weight: bold; }
+    text.note { font-size: 12px; fill: #666; }
+    @media (prefers-color-scheme: dark) {
+      .shape { stroke: #ddd; }
+      .light { fill: #262626; } .mid { fill: #444; } .main { fill: #ccc; }
+      text { fill: #ddd; } text.on-main { fill: #111; } text.note { fill: #999; }
+    }
+  </style>
+  <polygon class="shape light" points="160,12 285,90 36,90"/>
+  <text x="160" y="62" font-size="13">Integrated</text>
+  <polygon class="shape main" points="36,90 285,90 285,203 36,203"/>
+  <text x="160" y="146" font-size="22" class="on-main">Integration</text>
+  <polygon class="shape mid" points="36,203 285,203 160,282"/>
+  <text x="160" y="221" font-size="12">Implementation</text>
+  <text x="160" y="237" font-size="12">detail</text>
+  <text class="caption" x="160" y="300">Testing honeycomb</text>
+  <text class="note" x="160" y="318">Spotify, 2018</text>
+</svg>

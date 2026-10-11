@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 330" font-family="ui-monospace, Menlo, Consolas, 'Liberation Mono', monospace" role="img" aria-labelledby="t">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 330" width="640" height="330" font-family="ui-monospace, Menlo, Consolas, 'Liberation Mono', monospace" role="img" aria-labelledby="t">
   <title id="t">The test pyramid, with mostly unit tests, next to the testing trophy, with mostly integration tests</title>
   <style>
     .shape { stroke: #222; stroke-width: 1.5; stroke-linejoin: round; }
@@ -30,5 +30,5 @@
   <text class="caption" x="160" y="300">Test pyramid</text>
   <text class="note" x="160" y="318">Mike Cohn, 2009</text>
   <text class="caption" x="490" y="300">Testing trophy</text>
-  <text class="note" x="490" y="318">Kent C. Dodds</text>
+  <text class="note" x="490" y="318">Kent C. Dodds, 2018</text>
 </svg>

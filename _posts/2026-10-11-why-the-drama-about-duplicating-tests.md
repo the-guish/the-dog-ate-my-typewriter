@@ -215,23 +215,33 @@ tests, on the argument that unit tests are fast and isolated and UI tests are sl
 and brittle.
 
 
-This strategy departs from that on purpose. Unit tests are reserved
-for pure logic; the primary contracts are the API and e2e suites.
-
-
-That is closer to
-the "testing trophy" (Kent C. Dodds: ["write tests, not too many, mostly
-integration"](https://kentcdodds.com/blog/write-tests)) and to the "honeycomb" that some service teams describe, where the
-integration layer is the wide one and both unit and e2e are thin.
+The "testing trophy" by Kent C. Dodds pushes back, summed up in his
+["write tests, not too many, mostly integration"](https://kentcdodds.com/blog/write-tests).
+Most tests sit in its wide integration band.
 
 ![The test pyramid, with mostly unit tests, next to the testing trophy, with mostly integration tests]({{ '/assets/images/pyramid-vs-trophy.svg' | relative_url }})
 
+Spotify's ["testing honeycomb"](https://engineering.atspotify.com/2018/1/testing-of-microservices)
+makes a similar case for microservices. Integration tests are the wide middle.
+Implementation-detail tests and tests that depend on other services are both thin.
 
-The adapters categories echo hexagonal architecture: test the core as pure functions, test each
-adapter against the real thing it adapts. In the older vocabulary, this is the
-classical or Detroit school (real collaborators, check state) pushed out to the
-process boundary, rather than the London school (mock every collaborator, check
-interactions).
+![Spotify's testing honeycomb: mostly integration tests, few integrated and implementation-detail tests]({{ '/assets/images/testing-honeycomb.svg' | relative_url }})
+
+Back to Robinauts. Its strategy departs from the pyramid on purpose. Unit tests
+are kept for pure logic, and the API and e2e suites carry the contracts.
+
+The two adapter categories (`tests/adapters_free/` and `tests/adapters_metered/`)
+follow hexagonal architecture. The core is tested as pure functions, and each
+adapter against the real thing it wraps. In older terms, this is the classical or
+Detroit school (real collaborators, check the result), not the London school
+(mock every collaborator, check the calls).
+
+Counting lines of test code at the time of PR 121 gives the shape below. The
+adapter tests are the widest band, like the honeycomb's middle. The fast suite
+stands beside the others as an extra copy. Shared helpers and the tooling tests
+are left out.
+
+![Robinauts backend tests by lines of code: adapters widest, then unit and api, e2e narrowest, with the fast suite beside them as an extra copy]({{ '/assets/images/robinauts-tests.svg' | relative_url }})
 
 Every architect weighs the same four things differently: speed of feedback,
 confidence per test, cost of maintenance, and flakiness.
