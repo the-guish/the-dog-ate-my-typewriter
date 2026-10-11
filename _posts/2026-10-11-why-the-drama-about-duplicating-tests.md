@@ -236,7 +236,7 @@ adapter against the real thing it wraps. In older terms, this is the classical o
 Detroit school (real collaborators, check the result), not the London school
 (mock every collaborator, check the calls).
 
-Counting lines of test code at the time of PR 121 gives the shape below. The
+Counting lines of test code at time of writing gives the shape below. The
 adapter tests are the widest band, like the honeycomb's middle. The fast suite
 stands beside the others as an extra copy. Shared helpers and the tooling tests
 are left out.
@@ -286,7 +286,7 @@ the document touched. He wanted to know whether a pointer would do.
 
 ### The laboratory
 
-He made a throwaway fork, [`robinfork-b`](https://github.com/the-guish/robinfork-b),
+He made a throwaway fork,
 from PR 121 without its header tests. The behavior was there, untested.
 
 The experiment had two arms. The control arm ran on the repository as it was. The
