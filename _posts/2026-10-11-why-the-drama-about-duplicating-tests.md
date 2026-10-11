@@ -240,9 +240,13 @@ are kept for pure logic, and the API and e2e suites carry the contracts.
 
 The two adapter categories (`tests/adapters_free/` and `tests/adapters_metered/`)
 follow hexagonal architecture. The core is tested as pure functions, and each
-adapter against the real thing it wraps. In older terms, this is the classical or
-Detroit school (real collaborators, check the result), not the London school
-(mock every collaborator, check the calls).
+adapter against the real thing it wraps.
+
+Across the suite, Robinauts leans toward what is called the [classical, or Detroit,
+school](https://martinfowler.com/articles/mocksArentStubs.html). It uses real
+collaborators where possible and checks the result. The other tradition, the London
+or mockist school, replaces an object's neighbours with mocks and checks the calls
+between them.
 
 Counting lines of test code at the time of writing gives the shape below. The
 adapter tests are the widest band, like the honeycomb's middle. The fast suite
