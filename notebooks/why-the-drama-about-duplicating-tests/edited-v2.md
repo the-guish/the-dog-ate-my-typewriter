@@ -246,7 +246,7 @@ My "keep both" recommendation was pyramid thinking,
 with the in-process test as the base and the real-server test as the expensive top.
 In this repository the base is the real server, and the document says so.
 
-### The analysis, and the second wrong call
+### The analysis
 
 The strategy document answered the whole question in one step.
 
@@ -284,36 +284,39 @@ a pointer would do.
 
 ### The laboratory
 
-He created a throwaway fork, `robinfork-b`, from the PR 121 state with both
-header test files removed and the history squashed, so that a run would find the
-behavior implemented and untested.
+He created a throwaway fork, `robinfork-b`, from the PR 121 state. He removed both
+header test files and squashed the history. A run would find the behavior
+implemented and untested.
 
-Quick: one coordinator per arm, subagents in parallel, three first and seven more once the
-first three looked sane.
+The experiment had two arms. The control arm ran on the repository as it was. The
+treatment arm ran on the same repository plus one pointer file.
 
-Clean: the subagents never see anything but the task and
-the repository at a pinned commit, the coordinator never implements, and the two
-arms differ in exactly one file.
+Each arm had one coordinator, which ran subagents in parallel: three first,
+then seven more. Each subagent saw only the task and the repository at a pinned
+commit. The coordinators never wrote code.
 
+```
+Human developer                 designed the plan and runs,
+│                               started the coordinators
+│
+├─ Master session (me)          knew the whole day; wrote the task
+│
+├─ Coordinator, control arm     knew only its prompt
+│  └─ 10 subagents              knew only the task and the repository
+│
+└─ Coordinator, treatment arm   knew only its prompt
+   └─ 10 subagents              same, plus the pointer file
+```
 
-Who was responsible for what:
+Controlling what each session knew was the point. The experiment asks what an
+agent does given only the task and the repository. My own session could not run
+it. By then its context held the strategy document, the PR 121 discussion and the
+words "the placement is `tests/api`". Anything spawned from it would have
+inherited the answer.
 
-| Session  | Did | Deliberately did not |
-|---|---|---|---|
-| Human developer | the idea |  the ask and the shape of the session tree 
-| Master session | the whole day's conversation: both PRs, the strategy document | wrote the one-sentence task and the coordinator prompt, created the pilot, ran the three transcript audits through its own subagents | 
-| Coordinator, one per arm | the owner's prompt and a fresh checkout | fetched main and confirmed the SHA, spawned three then seven subagents with the task text verbatim in isolated worktrees, checked each branch's parent, pushed each branch unchanged, reported one line per branch |
-| Subagents, ten per arm | the task text, the repository at the pinned commit, and the owner's account-level skill | explored, chose a placement, wrote the test, got it to pass, committed with a sign-off |
-
-A note on why controlling the context of these sessions matters.
-
-The question
-being measured is "what does an agent do given only X". My own session could
-not run the experiment, because by then its context held the strategy document,
-the PR 121 discussion and the words "the placement is `tests/api`"; anything
-spawned from it would have inherited the answer.
-
-Only my master session would hold the entire plan. Coordinators would not know we would be comparing with and without strategy. Subagents in each arm would not know event they would be compared, just asked for implement a text in the current state of the repo.
+Only my session knew the whole plan. The coordinators did not know that one arm
+had a pointer and the other did not. The subagents did not know they were being
+compared. They were only asked to add a test to the repository as they found it.
 
 ### Fix and re-run
 
