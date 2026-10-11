@@ -3,7 +3,7 @@ title: "why the drama about duplicated tests?"
 date: 2026-10-11
 ---
 
-This all about how I just forgot to put an AGENTS.md in the Robinauts repo, my bad, then Claude not reading the docs, wrongly suggesting keeping duplicated tests, and finally trying to rewrite the docs.
+This all about how I just forgot to put an AGENTS.md in the [Robinauts](https://github.com/open-shipyard/robinauts) repo, my bad, then Claude not reading the docs, wrongly suggesting keeping duplicated tests, and finally trying to rewrite the docs.
 
 We fixed it, then  I asked Claude for a retro, that I needed to edit for brevity and some drama effect.
 
@@ -32,7 +32,7 @@ That was not welcomed, and triggered a full review of the patterns and factors i
 
 ### The review
 
-PR 120 added two things to the backend: a DNS-rebinding defense for the local
+[PR 120](https://github.com/open-shipyard/robinauts/pull/120) added two things to the backend: a DNS-rebinding defense for the local
 development mode and a set of security headers on every HTTP answer.
 I checked the `Host` parser against 36 edge cases, confirmed CI was green,
 and found one real gap: FastAPI's app-level dependencies do not run on a mounted
@@ -42,13 +42,12 @@ route refused it.
 
 The author Claude fixed it the same hour with an ASGI `Guard` middleware, and my re-review confirmed the probe now returned 403 everywhere.
 
-So far, a normal review. Then he asked me to compare PR 120 with PR 121.
+So far, a normal review. Then he asked me to compare PR 120 with [PR 121](https://github.com/open-shipyard/robinauts/pull/121).
 
 ### The comparison, and the first wrong call
 
-PR 121 was byte-identical in production code. It differed in tests: it deleted the
-in-process headers test from `backend/tests/fast/` and added a test against a
-real running server in `backend/tests/api/`, gated on PostgreSQL.
+PR 121 changed only the tests. It swapped the fast headers test for one against a
+real server, in `tests/api/`.
 
 I said 121 was the stronger PR, and then I said it should not delete the fast
 test.
@@ -73,24 +72,18 @@ The repository was 17 days old, 302 commits, 77 merged pull requests. `web/app.p
 The whole fast suite ran in about 10 seconds of wall time, and the one real-server headers test ran in about 11 seconds including server start, so a developer with PostgreSQL lost nothing by running the API test instead.
 
 
-The only beneficiary of the fast copy was a contributor without
-PostgreSQL, and CONTRIBUTING had already accepted that trade-off for everything
-in `tests/api`. I reversed myself: merge 121 as it was.
+I reversed myself: merge 121 as it was.
 
-He then said, in summary, that this was a recurring problem. Agents, both as
-implementers and as reviewers, kept making the wrong call on test placement, it
-was an unacceptable waste of time, and would I please review
-`docs/testing/testing-strategy.md`, the `AGENTS.md` and `CLAUDE.md` structure
-across the repository, and my own session, and say whether the instructions were
+He then he asked that would I please review the repo structure in relation to docs and AGENTS.MD, and my own session, and say whether the instructions were
 clear or there was a gap.
 
 ### What is so special about that testing strategy document the human developer insists on so much?
 
-If you have not read `docs/testing/testing-strategy.md`, it is about sixty lines,
+If you have not read [`docs/testing/testing-strategy.md`](https://github.com/open-shipyard/robinauts/blob/main/docs/testing/testing-strategy.md), it is about sixty lines,
 and here is what it says in plain words.
 
 The backend is built in layers that may only point inward, and the architecture
-rules in `docs/architecture/rules.md` enforce that with a test.
+rules in [`docs/architecture/rules.md`](https://github.com/open-shipyard/robinauts/blob/main/docs/architecture/rules.md) enforce that with a test.
 
 The strategy sorts tests by *what they prove*, not by how fast they run. Each category answers one question, and each behavior is proved in exactly one of them.
 
@@ -260,7 +253,7 @@ complied, and my "keep both" had been permitted but never required.
 
 Then I found why nobody was following it. Nothing in the repository linked to the
 document, not one file. There was no root `CLAUDE.md`, no root `AGENTS.md`, no
-`backend/AGENTS.md`. The only agent file was `frontend/AGENTS.md`, which said
+`backend/AGENTS.md`. The only agent file was [`frontend/AGENTS.md`](https://github.com/open-shipyard/robinauts/blob/main/frontend/AGENTS.md), which said
 nothing about tests.
 
 
@@ -275,7 +268,7 @@ I recommended four things. Call this **2**:
 - A decision rule at the top of the strategy document, a review criterion ("a PR
   whose only test for a behavior is a fast test is incomplete"), and a web-layer
   example.
-- Links to the document from CONTRIBUTING and `docs/layout.md`.
+- Links to the document from [CONTRIBUTING](https://github.com/open-shipyard/robinauts/blob/main/CONTRIBUTING.md) and [`docs/layout.md`](https://github.com/open-shipyard/robinauts/blob/main/docs/layout.md).
 - Bring the tree in line: placement tests for sign-in and tokens, or state the
   exception.
 
@@ -285,7 +278,7 @@ a pointer would do.
 
 ### The laboratory
 
-He created a throwaway fork, `robinfork-b`, from the PR 121 state. He removed both
+He created a throwaway fork, [`robinfork-b`](https://github.com/the-guish/robinfork-b), from the PR 121 state. He removed both
 header test files and squashed the history. A run would find the behavior
 implemented and untested.
 
@@ -324,7 +317,7 @@ neighboring fast tests.
 
 ### Fix and re-run
 
-In this case the fix was just the missing AGENTS.md with a note:
+In this case the fix was just the missing [AGENTS.md](https://github.com/the-guish/robinfork-b/blob/main/AGENTS.md) with a note:
 
 ```
 Before you add, move or change a test, read
