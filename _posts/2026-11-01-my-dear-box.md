@@ -18,7 +18,7 @@ That's where boxes get interesting. If I have a hundred things to remember, wher
 
 Large warehouses work the same way. Goods go into small boxes, then into larger containers, then into aisles, then into whole sheds, and sometimes into separate buildings: one property in one city with four sheds, another property in another city with seven. All of that has to live in an inventory system. A logistics company could not survive without boxes, smaller boxes, and larger boxes, one inside another.
 
-There is no way to run a large project without a structure, and without a plan for how those boxes are organized. You probably know this if you have ever had to move house. You put everything into boxes, you move, and then you have to find your things inside those boxes. A house move is the smallest version of a complex project. Most logistics work is thousands or millions of times that, and it needs much more advanced schemes.
+There is no way to run a large project without a structure, and without a plan for how those boxes are organized. If you have ever moved house, you have a sense of what it takes. You put everything into boxes, you move, and then you entertain yourself searching for your things inside those boxes. A house move is the smallest version of a complex project. Most logistics work is thousands or millions of times that, and it needs much more advanced schemes.
 
 ## The same mind, in software
 
