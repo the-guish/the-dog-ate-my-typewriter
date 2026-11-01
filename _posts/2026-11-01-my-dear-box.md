@@ -85,3 +85,5 @@ So the answer is neither. What you need are small black boxes, each a few hundre
 You do not have to review the contents of each one. But you do have to know the glass box that holds it, and its contract with the boxes around it. That way you can efficiently switch to manual mode, point your coding agent at it, know what needs testing, or rebuild it from scratch.
 
 In short: a glass box of black boxes.
+
+![A stick figure with an upside-down smiley face stands next to a two-door glass server cabinet with three shelves holding a few black boxes and two glass boxes]({{ '/assets/images/box-glass-cabinet.svg' | relative_url }})
