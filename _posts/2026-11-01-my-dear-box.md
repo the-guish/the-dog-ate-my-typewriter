@@ -34,7 +34,7 @@ Never underestimate a well-modeled box.
 
 ## The warehouse in your code
 
-Swap pallets for modules and warehouses for codebases, and the problem barely changes.
+Back in our more ethereal world, swap pallets for modules and warehouses for codebases, and the problem barely changes.
 
 Our mind is the same. It is the mind of that prehistoric person carrying arrowheads and fishhooks in a bag, the mind that organizes a move, and the mind that organizes a project of thousands of lines of code. Same mind, same capacities, same structures.
 
