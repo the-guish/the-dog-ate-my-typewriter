@@ -9,7 +9,7 @@ Con el tiempo, las bolsas, que también son de gran importancia y utilidad para 
 
 ¿Qué tiene de tan cautivante una caja? Está relacionado con que a los humanos nos gustan las cosas: nos gusta fabricar cosas, tener cosas, intercambiar cosas, regalar cosas. Y las cajas nos ayudan a organizar esas cosas. Si no tuviésemos cajas, nuestras cosas estarían probablemente en una gran habitación, que, por cierto, también es una caja. Las casas son cajas que tienen cuartos con forma de caja. Es imposible pensar en cualquier tipo de organización sin cajas, y eso te lo puede decir también Marie Kondo.
 
-¿Y por qué nos sirve organizar? La razón está en nuestra mente finita. Así como nos gusta tener muchas cosas, nuestra mente no puede llevar registro de tantas cosas a la vez. Hay distintos estudios acerca de cuántos elementos de una lista puede retener una mente humana en un determinado momento, pero con seguridad la mayoría de las personas no puede manejar 100 cosas con agilidad, ni 300. Yo probablemente no llego ni a siete cosas que pueda recordar de una lista.
+¿Y por qué nos sirve organizar? La razón está en nuestra mente finita. Así como nos gusta tener muchas cosas, nuestra mente no puede llevar registro de tantas cosas a la vez. La mayoría de las personas no puede retener 100 cosas a la vez, ni 300. Yo probablemente no llego ni a siete.
 
 Ahí es donde nos interesan las cajas. Si tengo 100 cosas que recordar, ¿dónde están? Puedo tener 10 cajas con 10 cosas cada una, y le pongo una etiqueta a cada caja. De esa forma, mi mente puede encontrar con menos esfuerzo dónde está cada una de esas 100 cosas que puedo necesitar en un determinado momento. Esa es la gran función de las cajas.
 
