@@ -4,7 +4,7 @@ date: 2026-11-01
 tags: [application-architecture]
 ---
 
-Why do we like boxes so much? There is a reason, and it is old. When people started making tools, we made arrowheads, fishhooks, and little figures of the divinities we had. We were nomads, so we carried them. At the beginning, I imagine, in bags.
+Why humankind likes boxes so much? There is a reason, and it is old. When people started making tools, we made arrowheads, fishhooks, and little figures of the divinities we had. We were nomads, so we carried them. At the beginning, I imagine, in bags.
 
 Bags matter too. They are important, and useful. Over time they gave way to boxes, above all in modern times, or from the point we could do carpentry. That has been a constant through the whole of human history. We have every kind of box. The ones shaped like a rectangular prism are the popular ones, and they run from a cardboard shoebox to a steel safe, or a shipping container that spends years crossing the ocean.
 
@@ -60,14 +60,31 @@ With boxes, it finds the right box, opens it, and reads what it needs. That take
 
 ## What is better than a black box or a glassbox?
 
-Here is the breaking point. These days I hear a lot of programmers ask, "why would I review anything, if the AI already knows how to do it all?", or they simply turn the work into a succession of prompts and pull requests, without paying attention to the software architecture and without reviewing the structure of the boxes.
+A black box usually means something whose inside we do not know: we see what happens outside, and not what happens inside. A glass box, a box of glass, a transparent one, is something we understand completely. 
 
-So here is the call for today. You do not have to review, if you do not want to, what is inside the boxes. You do not have to review what is inside the smallest boxes. You do have to take part in designing the structure of the boxes. That is how you keep doing the work that falls to you in the times we are in: step in on the particular matters that count, coordinate, and also design and assist the AI's flows, so the AI can map requirements onto those boxes, work more efficiently and more effectively, and at the same time generate fewer problems that you have to review.
 
-A succession of "I send this, I barely look, I merge" produces one thing: a gigantic black box. A black box usually means something whose inside we do not know: we see what happens outside, and not what happens inside. A glass box, a box of glass, a transparent one, is something we understand completely. Coding and merging without a structure is what produces a large black box.
+These days I hear a lot of programmers ask, "why would I review anything, if the AI already knows how to do it all, or the AI can review itself?". That posture, in its more pure version, treats the software artifact as a black box. We do not know how is it built inside we only care about how it behaves and interacts with the rest of the world. That I consider a valid strategy in many cases.
 
-For the volume of code we handle now, hoping for a glass box is not realistic. You cannot meet what the business expects, deploy the volume that has to go out, and also have the time to review all of it. A person can review, reasonably well, somewhere between two hundred and four hundred lines of code in an hour, and never more than a thousand. Those numbers simply do not match the expectations of the moment.
 
-So the strategy is not one large black box, and it is not a glass box of the old kind either. The answer is a glass box with small black boxes inside. You will have many black boxes, three hundred to five thousand lines of code at most, depending on the threshold you choose to set. You do not have to review those black boxes. Because they interact with each other, every one of them has to sit inside a glass box that you do understand, where you know how each part connects to the next.
+On another end, it is also posible pursue a glass-box approach, closer to what was assumed as normal in pre-AI era, we actually review the code and approve when we get to a reasonable level of shared understanding according to some criteria, many times tacit.
+In this second approach, the throughput would be less, the ability of the humans to maintain and support the system would be higher.
+And it is a valid strategy in many cases.
+
+
+How much to review the code is the same formula of before, and it is dependent on which position you take in terms of expected throughput, technical debt and investment in tooling and architechture beforehand.
+
+If you accept "classic" throughput, in terms of your team, a full glass-box policy would work. And my personal stance is that is still valid for selected pieces of the system where we want to keep a strong grip.
+
+If you favor throughtput, black boxes need to appear, and that is ok. You do not have to review, if you do not want to, what is inside the smaller boxes. But you will be more efficient and keep the throughput for longer time if you know where to find them with confidence.
+
+You do have to take part in designing the structure of the boxes. That is how you keep doing the work that falls to you in the times we are in: step in on the particular matters that count, coordinate, and also design and assist the AI's flows, so the AI can map requirements onto those boxes, work more efficiently and more effectively, and at the same time generate fewer problems that you have to review.
+
+On the contrary a succession of "I asked for something, I skim at my best will a small part of it, I merge" produces one thing: a gigantic black box. Coding and merging without a structure is what produces a large black box.
+
+For the volume of code we handle now, hoping for a glass box would not meet the business expectations at most of the organizations. Going full black will find limits as the system grows.
+
+So the strategy is not one large black box, and it is not a glass box either.
+
+The answer is a glass box with small black boxes inside. You will have many black boxes, three hundred to five thousand lines of code at most, depending on the threshold you choose to set. You do not have to review those black boxes. Because they interact with each other, every one of them has to sit inside a glass box that you do understand, where you know how each part connects to the next.
 
 The absolute, total answer to all of those questions people ask about this is: a glass box of black boxes.
