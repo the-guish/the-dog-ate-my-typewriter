@@ -12,7 +12,7 @@ What is so captivating about a box? Humans like things. We like making them, hav
 
 ## Labels for a finite mind
 
-Organizing helps because the mind is finite. We like having many things, and we cannot keep a record of that many things at once. While someone of ordinary ability, after long practice, can recite [79 digits](https://www.science.org/doi/10.1126/science.7375930), most of us cannot remember more than [about seven](https://labs.la.utexas.edu/gilden/files/2016/04/MagicNumberSeven-Miller1956.pdf) items on a supermarket list, or [about four](https://doi.org/10.1017/S0140525X01003922) when the items do not group. I never get to whatever came after "butter."
+Organizing helps because the mind is finite. We like having many things, and we cannot keep a record of that many things at once. While someone, after long practice, can recite [79 digits](https://www.science.org/doi/10.1126/science.7375930), most of us cannot remember more than [about seven](https://labs.la.utexas.edu/gilden/files/2016/04/MagicNumberSeven-Miller1956.pdf) or [four](https://doi.org/10.1017/S0140525X01003922) items on a supermarket list. I never get to whatever came after "butter."
 
 That's where boxes get interesting. If I have a hundred things to remember, where are they? I can have ten boxes of ten, and a label on each box. My mind can then find, with less effort, where each of those hundred things is when I need it. That is the great function of a box.
 
