@@ -42,7 +42,7 @@ In software we have to think in boxes. That is why we have modules, folders, lib
 
 A codebase works the same way. I need to know where the price gets recorded at the moment the user places the order. Where is that? I need a short series of boxes, three to ten of them: the modules of the system. I open one, find the boxes inside, and say: the prices ought to be in the large orders box; inside orders, at the moment of booking; inside booking, in the prices part. I open that box and I may be looking at some hundreds of lines I still have to scan. The structure of the boxes is what gets me there in three jumps, from the need to the code that matters.
 
-That is the point of a box. We have a finite mind, and we like having many things. We used to like clay figurines. Now we like something like an interface that provides an abstraction over three different modules, one of which makes HTTP requests. Software architecture is finding the boxes for the things we like to have now.
+That is the point of a box. We have a finite mind, and we like having many things. We used to collect clay figurines; now we collect interfaces that hide three modules: one making HTTP calls, another writing files, the last talking to a database. Software architecture is finding the boxes for the things we collect today.
 
 ## If the model can read it
 
