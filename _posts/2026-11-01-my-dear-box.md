@@ -58,7 +58,7 @@ Take the requirement from before: change the pricing policy for tier-2 customers
 
 With boxes, it finds the right box, opens it, and reads what it needs. That takes the model seconds. For people, the gain is similar: minutes to answer if they know the code, hours to onboard instead of days if they don’t.
 
-## A glass box with small black boxes inside
+## What is better than a black box or a glassbox?
 
 Here is the breaking point. These days I hear a lot of programmers ask, "why would I review anything, if the AI already knows how to do it all?", or they simply turn the work into a succession of prompts and pull requests, without paying attention to the software architecture and without reviewing the structure of the boxes.
 
