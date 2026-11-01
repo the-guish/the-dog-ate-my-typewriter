@@ -44,13 +44,13 @@ A codebase works the same way. I need to know where the price gets recorded at t
 
 That is the point of a box. We have a finite mind, and we like having many things. We used to collect clay figurines; now we collect interfaces that hide three modules: one making HTTP calls, another writing files, the last talking to a database. Software architecture is finding the boxes for the things we collect today.
 
-## If the model can read it
+## Why splitting still matters
 
-Why do those boxes still matter, if an AI can do the work? This could turn into a long digression. One day a model may not need the boxes at all. That day might be next week, in two years, in two centuries, or never: a day when people do not even think about the code, and the whole system is one gigantic black box that nobody looks inside. A single voice interface. You say, "God of the AI, orders from tier-2 customers have to show up in next year's pricing policy," and nobody touches anything else.
+Why do boxes still matter, if an AI can do the work? Maybe one day they won't. That day might come next week, in two years, in two centuries, or never: a day when nobody thinks about code anymore, and the whole system is one gigantic black box behind a voice interface. You say, "God of the AI, orders from tier-2 customers have to show up in next year's pricing policy," and nobody touches anything else.
 
-That may happen. We are not there yet. The context window on the strongest models that consumers and regular companies have is a million tokens. The whole thing does not fit in a single call. Models are astonishingly better than humans at handling lists, and we sit somewhere between seven items and a hundred, but their capacity is still not infinite. The winning strategies for dealing with millions of lines of code, in any universal way, are not settled either.
+We are not there yet. As of late 2026, the strongest models available to consumers and regular companies have context windows of about a million tokens. A large codebase doesn't fit in a single call. We top out at four to seven items; models handle far more. But their capacity is still finite.
 
-Millions of lines of code have to be organized so they fit in the context window of the models and in the "context window" of humans. The answer to that is software architecture.
+Nobody has settled on a general way to work across millions of lines of code. So those millions of lines still have to be organized to fit the context window of the models, and the "context window" of humans. The answer to that is software architecture.
 
 What is software architecture? Finding, discovering, or designing the large boxes, with the medium boxes and the small boxes, and putting the lines of code inside them, so a person can know where each thing lives, and so a model can work on a part of the system by mapping a requirement straight onto those boxes.
 
