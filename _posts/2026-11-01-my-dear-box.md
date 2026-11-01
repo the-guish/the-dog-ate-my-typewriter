@@ -76,6 +76,8 @@ The simplest technique, "ask, skim a little, merge," over time produces just one
 
 I measured the same agent on the same repository before and after refactoring it into better boxes: the messy repo was close to 30% more expensive. The test was informal and on a private company repository I cannot share, so you might try it yourself, or look at papers such as [RepoMod-Bench](https://arxiv.org/abs/2602.22518) (I've only read its abstract and conclusion :) ).
 
+![A stick figure stands next to one big black box, wider than a table and taller than the figure]({{ '/assets/images/box-big-black.svg' | relative_url }})
+
 For the volume of code we handle now, a full glass box would not meet business expectations at most organizations. Going full black will hit limits as the system grows.
 
 So the answer is neither. What you need are small black boxes, each a few hundred to a few thousand lines of code, depending on the threshold you set, with a clear understanding of how they relate.

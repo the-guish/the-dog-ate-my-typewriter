@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img" aria-labelledby="t">
+  <title id="t">A stick figure stands next to one big black box, wider than a table and taller than the figure</title>
+  <style>
+    path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .ink { stroke: #222; stroke-width: 1.6; }
+    .faint { stroke: #222; stroke-width: 1; opacity: 0.35; stroke-dasharray: 3 3; }
+    .wall { stroke: #222; stroke-width: 1.1; opacity: 0.4; }
+    .hatch { stroke: #555; stroke-width: 0.8; }
+    .shine { stroke: #fff; stroke-width: 2.5; }
+    .glass { fill: #bfdde9; fill-opacity: 0.55; stroke: none; }
+    .bfront { fill: #1c1c1c; } .btop { fill: #4a4a4a; } .bside { fill: #0d0d0d; }
+    .wtop { fill: #e2e2dc; } .wfront { fill: #c8c8c4; } .wside { fill: #aeaea8; }
+  </style>
+  <rect width="400" height="300" fill="#fff"/>
+<path class="wall" d="M13.8,224.8 Q200.7,225.0 386.9,223.1"/>
+<polygon class="bside" points="324.9,262.1 356.7,237.9 356.0,38.1 324.5,62.0"/>
+<polygon class="btop" points="140.2,62.5 324.4,61.7 355.3,38.5 171.3,37.3"/>
+<polygon class="bfront" points="140.8,262.7 325.2,262.2 324.5,61.2 140.0,61.3"/>
+<path class="ink" d="M139.1,261.3 Q231.3,262.4 323.7,261.9"/>
+<path class="ink" d="M140.1,262.4 Q232.4,261.9 325.0,262.5"/>
+<path class="ink" d="M326.4,263.4 Q325.7,162.3 326.0,62.6"/>
+<path class="ink" d="M324.4,260.8 Q325.9,161.0 325.7,61.7"/>
+<path class="ink" d="M326.3,63.0 Q233.4,62.0 138.6,61.2"/>
+<path class="ink" d="M326.3,61.7 Q233.2,61.5 138.8,62.4"/>
+<path class="ink" d="M138.8,61.5 Q139.2,161.5 141.3,262.7"/>
+<path class="ink" d="M138.9,60.8 Q140.0,160.8 140.8,261.1"/>
+<path class="ink" d="M324.1,262.6 Q338.6,250.3 355.0,238.4"/>
+<path class="ink" d="M324.2,261.4 Q340.3,251.0 357.3,238.8"/>
+<path class="ink" d="M355.2,237.7 Q355.1,139.2 357.0,38.4"/>
+<path class="ink" d="M355.2,237.3 Q355.5,136.4 356.8,37.5"/>
+<path class="ink" d="M323.9,62.2 Q339.3,50.1 355.3,38.3"/>
+<path class="ink" d="M326.3,62.0 Q340.5,49.7 356.2,39.0"/>
+<path class="ink" d="M141.1,62.9 Q156.3,51.1 170.3,37.1"/>
+<path class="ink" d="M139.2,63.3 Q155.4,49.8 172.1,38.3"/>
+<path class="ink" d="M169.7,39.3 Q261.9,39.7 355.3,38.6"/>
+<path class="ink" d="M171.3,37.4 Q262.1,37.4 355.1,38.6"/>
+<path class="hatch" d="M140.2,63.0 Q141.2,61.5 140.3,61.4"/>
+<path class="hatch" d="M138.6,70.4 Q143.0,65.2 148.8,60.8"/>
+<path class="hatch" d="M140.2,79.0 Q150.1,71.4 157.6,63.1"/>
+<path class="hatch" d="M140.5,89.2 Q152.1,76.0 166.0,60.7"/>
+<path class="hatch" d="M140.6,99.3 Q157.6,81.4 174.7,62.4"/>
+<path class="hatch" d="M139.5,108.4 Q162.2,86.2 183.8,62.1"/>
+<path class="hatch" d="M140.7,116.6 Q167.4,90.3 194.8,63.2"/>
+<path class="hatch" d="M141.1,126.0 Q172.8,94.6 202.8,62.8"/>
+<path class="hatch" d="M140.3,133.7 Q175.3,98.3 212.2,62.3"/>
+<path class="hatch" d="M141.4,144.1 Q182.1,103.1 221.6,61.7"/>
+<path class="hatch" d="M139.8,152.9 Q183.2,108.1 228.8,62.7"/>
+<path class="hatch" d="M139.9,160.2 Q190.0,112.1 239.6,62.0"/>
+<path class="hatch" d="M139.3,168.6 Q192.7,114.8 247.4,62.5"/>
+<path class="hatch" d="M141.1,179.4 Q198.6,121.7 256.8,63.1"/>
+<path class="hatch" d="M139.2,187.8 Q203.9,125.2 266.9,63.2"/>
+<path class="hatch" d="M140.2,196.5 Q207.9,130.1 274.0,62.0"/>
+<path class="hatch" d="M140.6,207.3 Q211.9,133.6 283.4,61.1"/>
+<path class="hatch" d="M139.2,214.8 Q215.8,139.2 293.4,62.0"/>
+<path class="hatch" d="M141.3,223.9 Q222.0,141.2 300.8,60.7"/>
+<path class="hatch" d="M140.6,233.2 Q224.4,147.1 310.5,62.8"/>
+<path class="hatch" d="M139.9,240.7 Q229.5,149.9 320.9,61.3"/>
+<path class="hatch" d="M140.4,250.9 Q233.6,159.7 325.4,66.4"/>
+<path class="hatch" d="M140.5,259.2 Q231.5,166.6 324.9,74.1"/>
+<path class="hatch" d="M147.6,261.1 Q236.5,172.4 324.4,83.6"/>
+<path class="hatch" d="M156.3,262.7 Q241.5,177.3 324.7,93.8"/>
+<path class="hatch" d="M166.2,262.6 Q245.4,183.2 324.0,101.9"/>
+<path class="hatch" d="M173.7,262.2 Q250.9,186.9 326.1,111.8"/>
+<path class="hatch" d="M183.4,261.2 Q254.9,191.6 325.6,120.9"/>
+<path class="hatch" d="M191.2,263.1 Q258.9,197.4 326.3,130.3"/>
+<path class="hatch" d="M200.5,263.1 Q262.2,200.2 326.0,137.6"/>
+<path class="hatch" d="M210.1,262.8 Q268.3,203.2 325.0,145.7"/>
+<path class="hatch" d="M219.8,261.1 Q271.3,208.1 324.5,156.8"/>
+<path class="hatch" d="M228.0,262.6 Q278.1,214.1 326.0,165.5"/>
+<path class="hatch" d="M238.3,260.8 Q280.7,218.0 324.2,174.1"/>
+<path class="hatch" d="M246.4,262.1 Q285.7,222.3 326.0,183.2"/>
+<path class="hatch" d="M256.0,263.1 Q291.2,228.1 324.2,193.0"/>
+<path class="hatch" d="M264.2,261.2 Q294.9,230.0 325.1,201.0"/>
+<path class="hatch" d="M274.3,262.0 Q299.7,236.4 324.7,210.8"/>
+<path class="hatch" d="M282.5,260.8 Q304.9,240.8 325.1,218.8"/>
+<path class="hatch" d="M290.4,261.9 Q307.9,245.8 324.0,227.8"/>
+<path class="hatch" d="M299.9,261.5 Q313.1,248.5 324.1,237.3"/>
+<path class="hatch" d="M309.8,260.7 Q317.4,252.5 324.1,245.2"/>
+<path class="hatch" d="M317.6,262.3 Q319.8,259.0 323.9,255.6"/>
+<path class="ink" fill="#fff" d="M82.0,107.6 L83.3,113.7 L84.1,120.3 L80.8,126.1 L75.2,129.4 L69.8,132.9 L63.3,132.6 L57.3,130.5 L52.5,126.4 L49.7,120.8 L49.0,114.7 L49.7,108.6 L52.9,103.1 L57.3,98.2 L64.0,97.9 L70.5,96.6 L75.8,100.6 L80.5,104.8 L84.0,110.3"/>
+<path class="ink" fill="#fff" d="M73.8,98.9 L78.4,103.2 L82.5,108.0 L83.7,114.2 L83.9,120.8 L79.6,125.9 L75.1,130.2 L69.3,133.5 L62.9,131.8 L56.8,130.3 L51.4,126.6 L48.4,120.7 L48.9,114.2 L50.3,108.3 L53.6,103.2 L57.8,98.0 L64.4,97.6 L70.9,97.2 L77.1,99.8"/>
+<path class="ink" d="M65.5,132.4 Q66.3,167.9 68.3,202.3"/>
+<path class="ink" d="M65.5,132.4 Q66.5,167.9 65.6,202.7"/>
+<path class="ink" d="M67.2,149.7 Q52.3,167.9 35.3,183.9"/>
+<path class="ink" d="M65.7,150.3 Q51.8,166.4 35.8,184.0"/>
+<path class="ink" d="M66.8,151.7 Q82.9,166.3 98.4,181.8"/>
+<path class="ink" d="M65.5,150.6 Q81.2,165.8 98.3,179.8"/>
+<path class="ink" d="M66.3,200.8 Q53.8,232.6 42.2,262.1"/>
+<path class="ink" d="M68.1,203.4 Q54.5,232.1 42.8,260.8"/>
+<path class="ink" d="M67.6,201.9 Q78.7,232.2 89.3,261.8"/>
+<path class="ink" d="M67.7,203.0 Q79.9,231.5 90.5,260.9"/>
+</svg>
