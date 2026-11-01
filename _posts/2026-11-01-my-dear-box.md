@@ -8,7 +8,9 @@ Why do we like boxes so much? There is a reason, and it is old. When people star
 
 Bags matter too. They are important, and useful. Over time they gave way to boxes, above all in modern times, or from the point we could do carpentry. That has been a constant through the whole of human history. We have every kind of box. The ones shaped like a rectangular prism are the popular ones, and they run from a cardboard shoebox to a shipping container that spends years crossing the ocean, or a safe.
 
-What is so captivating about a box? Humans like things. We like making them, having them, trading them, and giving them away. Boxes help us organize those things. Without boxes, our things would probably sit in one large room, which, by the way, is also a box. Houses are boxes that contain rooms shaped like boxes. It is impossible to think of any kind of organization without boxes, and Marie Kondo could tell you the same.
+What is so captivating about a box?
+
+Humans like things. We like making them, having them, trading them, and giving them away. Boxes help us organize those things. Without boxes, our things would probably sit in one large room, which, by the way, is also a box. Houses are boxes that contain rooms shaped like boxes. It is impossible to think of any kind of organization without boxes, and Marie Kondo could tell you the same.
 
 ## Labels for a finite mind
 
