@@ -50,9 +50,9 @@ Why do boxes still matter, if an AI can do the work? Maybe one day they won't. T
 
 We are not there yet. As of late 2026, the strongest models available to consumers and regular companies have context windows of about a million tokens, and they [work best well below that limit](https://www.trychroma.com/research/context-rot). A large codebase doesn't fit in a single call. We top out at four to seven items; models handle far more. But their capacity is still finite.
 
-Nobody has settled on a general way to work across millions of lines of code. So those millions of lines still have to be organized to fit the context window of the models, and the "context window" of humans. The answer to that is software architecture.
+Nobody has settled on a general, absolute way to work across millions of lines of code. So those millions of lines still have to be organized to fit the context window of the models, and the "context window" of humans.
 
-What is software architecture? Finding, discovering, or designing the large boxes, with the medium boxes and the small boxes, and putting the lines of code inside them, so a person can know where each thing lives, and so a model can work on a part of the system by mapping a requirement straight onto those boxes.
+Software architecture is the answer to that, and it means discovering or designing the large boxes, with the medium boxes and the small boxes, and putting the lines of code inside them, so a person can know where each thing lives, and so a model can work on a part of the system by mapping a requirement straight onto those boxes.
 
 Give it the requirement I mentioned, changing the customer's pricing policy, in a two-line prompt. Instead of having to scan thousands of lines of code written in different patterns, losing time and effectiveness and spending money, it can first identify the box where that code lives, and go read the whole box. That is the difference. The model can probably read that whole box in five seconds. It would take us hours or days, or we would have had to know the box beforehand. Boxes are still relevant to productivity, for the AI working alone and for the human working alone.
 
