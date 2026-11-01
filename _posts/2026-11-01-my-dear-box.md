@@ -60,7 +60,8 @@ With boxes, it finds the right box, opens it, and reads what it needs. That take
 
 ## What is better than a black box or a glassbox?
 
-A black box usually means something whose inside we do not know: we see what happens outside, and not what happens inside. A glass box, a box of glass, a transparent one, is something we understand completely. 
+
+A black box is something we can't see inside: we know what it does, not how it does it. A glass box is the opposite. It's transparent, we can see what is happening inside and correlate that with its external behavior.
 
 
 These days I hear a lot of programmers ask, "why would I review anything, if the AI already knows how to do it all, or the AI can review itself?" or from others "There is no way I can find the time for reviewing what's piling up in my desk". That posture, in its more pure version, treats the software artifact as a black box. We do not know how is it built inside we only care about how it behaves and interacts with the rest of the world. That I consider a valid strategy in many cases.
@@ -81,10 +82,10 @@ You do have to take part in designing the structure of the boxes. That is how yo
 
 On the contrary a succession of "I asked for something, I skim at my best will a small part of it, I merge" produces one thing: a gigantic black box. Coding and merging without a structure is what produces a large black box.
 
-For the volume of code we handle now, hoping for a glass box would not meet the business expectations at most of the organizations. Going full black will find limits as the system grows.
+For the volume of code we handle now, hoping for a glass box would not meet the business expectations at most of the organizations. Going full black will hit limits as the system grows.
 
 So the strategy is not one large black box, and it is not a glass box either.
 
-The answer is a glass box with small black boxes inside. You will have many black boxes, three hundred to five thousand lines of code at most, depending on the threshold you choose to set. You do not have to review those black boxes. Because they interact with each other, every one of them has to sit inside a glass box that you do understand, where you know how each part connects to the next.
+The answer is a glass box with small black boxes inside. You’ll have many black boxes, each a few hundred to a few thousand lines of code, depending on the threshold you set.
 
-The absolute, total answer to all of those questions people ask about this is: a glass box of black boxes.
+You don’t have to review them. But you do have to understand the glass box that holds them: what each box is for, what it promises the others, and how they connect. If you don’t read the code, the boundaries are where your control lives. You can test what a box promises without opening it, trace a failure to the right box before it spreads, and regenerate a box from scratch when it goes bad.
