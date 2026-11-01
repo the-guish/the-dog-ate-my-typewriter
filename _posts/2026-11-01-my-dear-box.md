@@ -32,11 +32,11 @@ One small field turns millions of loose items into a hierarchy. Move a pallet, a
 
 Never underestimate a well-modeled box.
 
-## The same mind, in software
+## The warehouse in your code
 
-This is not a logistics blog. Or maybe it is. I worked in logistics and, surprise, I also designed logistics systems. How does any of this carry over into software architecture and building applications?
+Swap pallets for modules and warehouses for codebases, and the problem barely changes.
 
-The mind is the same one. It is the mind of that prehistoric person carrying arrowheads and fishhooks in a bag, the mind that organizes a move, and the mind that organizes a project of thousands of lines of code. Same mind, same capacities, same structures.
+Our mind is the same. It is the mind of that prehistoric person carrying arrowheads and fishhooks in a bag, the mind that organizes a move, and the mind that organizes a project of thousands of lines of code. Same mind, same capacities, same structures.
 
 In software we have to think in boxes. That is why we have modules, folders, libraries, and components. Each one is a box we can give a meaning, and we know roughly what is inside. That is what takes us from a need, such as "I need to find my drill for this," to actually having the drill in hand.
 
