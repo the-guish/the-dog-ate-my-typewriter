@@ -20,6 +20,10 @@ Large warehouses work the same way. Goods go into small boxes, then into larger 
 
 There is no way to run a large project without a structure, and without a plan for how those boxes are organized. If you have ever moved house, you have a sense of what it takes. You put everything into boxes, you move, and then you entertain yourself searching for your things inside those boxes. A house move is the smallest version of a complex project. Most logistics work is thousands or millions of times that, and it needs much more advanced schemes.
 
+In a past life I was an Oracle Applications implementer, working on ERP and supply chain. The Oracle SCM suite is an interesting system: it runs from handheld barcode scanners on the warehouse floor to Bayesian forecasting algorithms, and it lets a large company track inventory across many countries, down to the individual shelf. I saw it up close when I helped roll it out at Sherwin-Williams Argentina, a program that ended with the region's weekly [demand-forecasting time cut by about 94%](https://www.slideshare.net/slideshow/zero-downtime-for-oracle-ebusiness-suite-on-oracle-exalogic/40254433).
+
+The main domain entity behind all of it is "container" with a parent id.
+
 ## The same mind, in software
 
 This is not a logistics blog. Or maybe it is. I worked in logistics and, surprise, I also designed logistics systems. How does any of this carry over into software architecture and building applications?
