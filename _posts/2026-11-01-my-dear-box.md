@@ -1,0 +1,61 @@
+---
+title: "my dear box"
+date: 2026-11-01
+tags: [application-architecture]
+---
+
+Why do we like boxes so much? There is a reason, and it is old. When people started making tools, we made arrowheads, fishhooks, and little figures of the divinities we had. We were nomads, so we carried them. At the beginning, I imagine, in bags.
+
+Bags matter too. They are important, and useful. Over time they gave way to boxes, above all in the modern era, and from the point we could do carpentry. That has been a constant through the whole of human history. We have every kind of box. The ones shaped like a rectangular prism are the popular ones, and they run from a cardboard shoebox to a shipping container that spends years crossing the ocean, or a safe.
+
+What is so captivating about a box? Humans like things. We like making them, having them, trading them, and giving them away. Boxes help us organize those things. Without boxes, our things would probably sit in one large room, which, by the way, is also a box. Houses are boxes that contain rooms shaped like boxes. It is impossible to think of any kind of organization without boxes, and Marie Kondo could tell you the same.
+
+## Labels for a finite mind
+
+Organizing helps because the mind is finite. We like having many things, and we cannot keep a record of that many things at once. There are studies on how many items from a list a person can hold at one moment. I'm sure of this much: most people cannot handle a hundred things with any agility, or three hundred. I probably cannot keep even seven things from a list in my head.
+
+That's where boxes get interesting. If I have a hundred things to remember, where are they? I can have ten boxes of ten, and a label on each box. My mind can then find, with less effort, where each of those hundred things is when I need it. That is the great function of a box.
+
+Large warehouses work the same way. Goods go into small boxes, then into larger containers, then into aisles, then into whole sheds, and sometimes into separate buildings: one property in one city with four sheds, another property in another city with seven. All of that has to live in an inventory system. A logistics company could not survive without boxes, smaller boxes, and larger boxes, one inside another.
+
+There is no way to run a large project without a structure, and without a plan for how those boxes are organized. You probably know this if you have ever had to move house. You put everything into boxes, you move, and then you have to find your things inside those boxes. A house move is the smallest version of a complex project. Most logistics work is thousands or millions of times that, and it needs much more advanced schemes.
+
+## The same mind, in software
+
+This is not a logistics blog. Or maybe it is. I worked in logistics and, surprise, I also designed logistics systems. How does any of this carry over into software architecture and building applications?
+
+The mind is the same one. It is the mind of that prehistoric person carrying arrowheads and fishhooks in a bag, the mind that organizes a move, and the mind that organizes a project of thousands of lines of code. Same mind, same capacities, same structures.
+
+In software we have to think in boxes. That is why we have modules, folders, libraries, and components. Each one is a box we can give a meaning, and we know roughly what is inside. That is what takes us from a need, such as "I need to find my drill for this," to actually having the drill in hand.
+
+A codebase works the same way. I need to know where the price gets recorded at the moment the user places the order. Where is that? I need a short series of boxes, three to ten of them: the modules of the system. I open one, find the boxes inside, and say: the prices ought to be in the large orders box; inside orders, at the moment of booking; inside booking, in the prices part. I open that box and I may be looking at three thousand lines I still have to scan. The structure of the boxes is what gets me there in three jumps, from the need to the code that matters.
+
+That is the point of a box. We have a finite mind, and we like having many things. We used to like clay figurines. Now we like something like an interface that provides an abstraction over three different modules, one of which makes HTTP requests. Software architecture is finding the boxes for the things we like to have now.
+
+## If the model can read it
+
+Why do those boxes still matter, if an AI can do the work? This could turn into a long digression. One day a model may not need the boxes at all. That day might be next week, in two years, in two centuries, or never: a day when people do not even think about the code, and the whole system is one gigantic black box that nobody looks inside. A single voice interface. You say, "God of the AI, orders from tier-2 customers have to show up in next year's pricing policy," and nobody touches anything else.
+
+That may happen. We are not there yet. The context window on the strongest models that consumers and regular companies have is a million tokens. The whole thing does not fit in a single call. Models are astonishingly better than humans at handling lists, and we sit somewhere between seven items and a hundred, but their capacity is still not infinite. The winning strategies for dealing with millions of lines of code, in any universal way, are not settled either.
+
+Millions of lines of code have to be organized so they fit in the context window of the models and in the "context window" of humans. The answer to that is software architecture.
+
+What is software architecture? Finding, discovering, or designing the large boxes, with the medium boxes and the small boxes, and putting the lines of code inside them, so a person can know where each thing lives, and so a model can work on a part of the system by mapping a requirement straight onto those boxes.
+
+Give it the requirement I mentioned, changing the customer's pricing policy, in a two-line prompt. Instead of having to scan thousands of lines of code written in different patterns, losing time and effectiveness and spending money, it can first identify the box where that code lives, and go read the whole box. That is the difference. The model can probably read that whole box in five seconds. It would take us hours or days, or we would have had to know the box beforehand. Boxes are still relevant to productivity, for the AI working alone and for the human working alone.
+
+## A glass box with small black boxes inside
+
+Here is the breaking point. These days I hear a lot of programmers ask, "why would I review anything, if the AI already knows how to do it all?", or they simply turn the work into a succession of prompts and pull requests, without paying attention to the software architecture and without reviewing the structure of the boxes.
+
+So here is the call for today. You do not have to review, if you do not want to, what is inside the boxes. You do not have to review what is inside the smallest boxes. You do have to take part in designing the structure of the boxes. That is how you keep doing the work that falls to you in the times we are in: step in on the particular matters that count, coordinate, and also design and assist the AI's flows, so the AI can map requirements onto those boxes, work more efficiently and more effectively, and at the same time generate fewer problems that you have to review.
+
+A succession of "I send this, I barely look, I merge" produces one thing: a gigantic black box. A black box usually means something whose inside we do not know: we see what happens outside, and not what happens inside. A glass box, a box of glass, a transparent one, is something we understand completely. Coding and merging without a structure is what produces a large black box.
+
+For the volume of code we handle now, hoping for a glass box is not realistic. You cannot meet what the business expects, deploy the volume that has to go out, and also have the time to review all of it. A person can review, reasonably well, somewhere between two hundred and four hundred lines of code in an hour, and never more than a thousand. Those numbers simply do not match the expectations of the moment.
+
+So the strategy is not one large black box, and it is not a glass box of the old kind either. The answer is a glass box with small black boxes inside. You will have many black boxes, three hundred to five thousand lines of code at most, depending on the threshold you choose to set. You do not have to review those black boxes. Because they interact with each other, every one of them has to sit inside a glass box that you do understand, where you know how each part connects to the next.
+
+The absolute, total answer to all of those questions people ask about this is: a glass box with small black boxes inside.
+
+You're welcome. You're welcome. You're welcome.
