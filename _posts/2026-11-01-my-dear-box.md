@@ -28,7 +28,7 @@ Behind much of it sits a key domain entity: a "containers" table with a parent I
 
 For today, just know that each record is something that can sit inside something else: a box on a pallet, a pallet in a shipping container, all of them tagged.
 
-One small field turns millions of loose items into a hierarchy. Move a pallet, and everything on it moves in one step.
+Some key tables and fields turns millions of loose items into a hierarchy. Move a pallet, and everything on it moves in one step.
 
 Never underestimate a well-modeled box.
 
