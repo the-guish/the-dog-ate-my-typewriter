@@ -70,7 +70,7 @@ If your team accepts "classic" throughput, a full-review, glass-box policy works
 
 If you favor throughput, black boxes need to appear, and that is okay. You do not have to review what is inside the smaller boxes if you do not want to. But depending on how it is done, the coding agents' performance may gradually degrade as the system grows, unless an ugly surprise hits first.
 
-![A stick figure stands next to a small glass box on the floor; behind it, two black boxes sit on a table]({{ '/assets/images/box-glass-and-black.svg' | relative_url }})
+![A smiling stick figure stands next to a small glass box on the floor; behind it, two black boxes sit on a table]({{ '/assets/images/box-glass-and-black.svg' | relative_url }})
 
 The simplest technique, "ask, skim a little, merge," over time produces just one thing: a gigantic black box.
 

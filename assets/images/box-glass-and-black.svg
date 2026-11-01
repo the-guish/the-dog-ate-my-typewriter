@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img" aria-labelledby="t">
-  <title id="t">A stick figure stands next to a small glass box on the floor; behind it, two black boxes sit on a table</title>
+  <title id="t">A smiling stick figure stands next to a small glass box on the floor; behind it, two black boxes sit on a table</title>
   <style>
     path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
     .ink { stroke: #222; stroke-width: 1.6; }
@@ -140,4 +140,7 @@
 <path class="ink" d="M68.1,203.4 Q54.5,232.1 42.8,260.8"/>
 <path class="ink" d="M67.6,201.9 Q78.7,232.2 89.3,261.8"/>
 <path class="ink" d="M67.7,203.0 Q79.9,231.5 90.5,260.9"/>
+<circle cx="60" cy="112.0" r="1.9" fill="#222"/>
+<circle cx="72" cy="112.0" r="1.9" fill="#222"/>
+<path class="ink" d="M60.0,121.0 Q66.0,124.5 72.0,121.0"/>
 </svg>
