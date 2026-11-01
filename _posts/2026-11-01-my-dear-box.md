@@ -18,7 +18,7 @@ Organizing helps because the mind is finite. We like having many things, and we 
 
 That's where boxes get interesting. If I have a hundred things to remember, where are they? I can have ten boxes of ten, and a label on each box. My mind can then find, with less effort, where each of those hundred things is when I need it. That is the great function of a box.
 
-Large warehouses work the same way. Goods go into small boxes, then into larger containers, then into aisles, then into whole sheds, and sometimes into separate buildings: one property in one city with four sheds, another property in another city with seven. All of that has to live in an inventory system. 
+Large warehouses work the same way. Goods go into small boxes, then into larger containers, then into aisles, then into whole sheds, and sometimes into separate buildings: one property in one city with four sheds, another property in another city with seven. All of that has to live in an inventory system.
 
 There is no way to run a large project without a structure, and without a plan for how those boxes are organized. If you have ever moved house, you have a sense of what it takes. You put everything into boxes, you move, and then you entertain yourself searching for your things inside those boxes. A house move is the smallest version of a complex project. Most logistics work is thousands or millions of times that, and it needs much more advanced schemes.
 
@@ -28,7 +28,7 @@ Behind much of it sits a key domain entity: a "containers" table with a parent I
 
 For today, just know that each record is something that can sit inside something else: a box on a pallet, a pallet in a shipping container, all of them tagged.
 
-Some key tables and fields turns millions of loose items into a hierarchy. Move a pallet, and everything on it moves in one step.
+Some key tables and fields turn millions of loose items into a hierarchy. Move a pallet, and everything on it moves in one step.
 
 Never underestimate a well-modeled box.
 
@@ -52,27 +52,27 @@ We are not there yet. As of late 2026, the strongest models available to consume
 
 Nobody has settled on a general, absolute way to work across millions of lines of code. So those millions of lines still have to be organized to fit the context window of the models, and the "context window" of humans.
 
-Software architecture holds answers to that, and it means discovering or designing the large boxes, with the medium boxes and the small boxes, and putting the lines of code inside them, so a person can know where each thing lives, and so a model can work on a part of the system by mapping a requirement straight onto those boxes.
+Software architecture holds answers to that. It means discovering or designing the large boxes, with the medium boxes and the small boxes, and putting the lines of code inside them, so a person can know where each thing lives, and so a model can work on a part of the system by mapping a requirement straight onto those boxes.
 
 Take the requirement from before: change the pricing policy for tier-2 customers, in a two-line prompt. Without boxes, the model has to scan thousands of lines written in different patterns, which wastes time and money and produces suboptimal results.
 
-With boxes, it finds the right box, opens it, and reads what it needs. That takes the model seconds. For people, the gain is similar: minutes to answer if they know the code, hours to onboard instead of days if they don’t.
+With boxes, it finds the right box, opens it, and reads what it needs. That takes the model seconds. For people, the gain is similar: minutes to answer if they know the code, hours to onboard instead of days if they don't.
 
 ## What is better than a black box or a glass box?
 
 A black box is something we cannot see inside: we know what it does, not how it does it. A glass box is the opposite. It is transparent: we can see what is happening inside and connect that with its external behavior.
 
-These days I hear a lot of developers ask, “Why would I review anything, if the AI already knows how to do it all, or can review itself?” Others say, “There is no way I can find the time to review what’s piling up on my desk.”, many "I don't know when or how much to review".
+These days I hear a lot of developers ask, "Why would I review anything, if the AI already knows how to do it all, or can review itself?" Others say, "There is no way I can find the time to review what's piling up on my desk." Many more say, "I don't know when or how much to review."
 
-The level to review has the same formula as before. It depends on where you stand on expected throughput, technical debt, and how much you invested in tooling and architecture beforehand.
+How much to review has the same formula as before. It depends on where you stand on expected throughput, technical debt, and how much you invested in tooling and architecture beforehand.
 
-If your team accepts “classic” throughput, a full-review, glass-box policy works. My personal stance is that it is still valid for selected pieces of the system where we want to keep a strong grip.
+If your team accepts "classic" throughput, a full-review, glass-box policy works. My personal stance is that it is still valid for selected pieces of the system where we want to keep a strong grip.
 
-If you favor throughput, black boxes need to appear, and that is okay. You do not have to review what is inside the smaller boxes if you do not want to. But depending on how it is done, the coding agents’ performance may gradually degrade as the system grows, if an ugly surprise does not hit first.
+If you favor throughput, black boxes need to appear, and that is okay. You do not have to review what is inside the smaller boxes if you do not want to. But depending on how it is done, the coding agents' performance may gradually degrade as the system grows, unless an ugly surprise hits first.
 
-The simplest technique, “ask, skim a little, merge,” over time produces just one thing: a gigantic black box.
+The simplest technique, "ask, skim a little, merge," over time produces just one thing: a gigantic black box.
 
-I measured the same agent on the same repository before and after refactoring it into better boxes: the messy repo was close to 30% more expensive. The test was informal and on a private company repository I cannot share, so you might try it yourself, or look at a paper I have only read the abstract and conclusion of :), such as [RepoMod-Bench](https://arxiv.org/abs/2602.22518).
+I measured the same agent on the same repository before and after refactoring it into better boxes: the messy repo was close to 30% more expensive. The test was informal and on a private company repository I cannot share, so you might try it yourself, or look at papers such as [RepoMod-Bench](https://arxiv.org/abs/2602.22518) (I've only read its abstract and conclusion :) ).
 
 For the volume of code we handle now, a full glass box would not meet business expectations at most organizations. Going full black will hit limits as the system grows.
 
