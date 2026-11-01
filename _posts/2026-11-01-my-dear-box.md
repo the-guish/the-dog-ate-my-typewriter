@@ -78,9 +78,9 @@ If you accept "classic" throughput, in terms of your team, a full glass-box poli
 
 If you favor throughtput, black boxes need to appear, and that is ok. You do not have to review, if you do not want to, what is inside the smaller boxes. But you will be more efficient and keep the throughput for longer time if you know where to find them with confidence.
 
-You do have to take part in designing the structure of the boxes. That is how you keep doing the work that falls to you in the times we are in: step in on the particular matters that count, coordinate, and also design and assist the AI's flows, so the AI can map requirements onto those boxes, work more efficiently and more effectively, and at the same time generate fewer problems that you have to review.
+You do have to take part in designing the structure of the boxes, and shaping the AI’s workflows so it can map requirements onto them. The AI then works faster, and creates fewer problems for you to review.
 
-On the contrary a succession of "I asked for something, I skim at my best will a small part of it, I merge" produces one thing: a gigantic black box. Coding and merging without a structure is what produces a large black box.
+Skip that, and “ask, skim a little, merge” produces just one thing: a gigantic black box.
 
 For the volume of code we handle now, hoping for a glass box would not meet the business expectations at most of the organizations. Going full black will hit limits as the system grows.
 
@@ -88,4 +88,4 @@ So the strategy is not one large black box, and it is not a glass box either.
 
 The answer is a glass box with small black boxes inside. You’ll have many black boxes, each a few hundred to a few thousand lines of code, depending on the threshold you set.
 
-You don’t have to review them. But you do have to understand the glass box that holds them: what each box is for, what it promises the others, and how they connect. If you don’t read the code, the boundaries are where your control lives. You can test what a box promises without opening it, trace a failure to the right box before it spreads, and regenerate a box from scratch when it goes bad.
+You don’t have to review the contents of each one. But you do have to know what the glass box that holds it and what is the contract with the other boxes around, so you can efficiently go manual mode, or point your code agent to it, understand what needs to be tested or rebuild it from scratch.
