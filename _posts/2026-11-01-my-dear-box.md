@@ -40,6 +40,8 @@ Our mind is the same. It is the mind of that prehistoric person carrying arrowhe
 
 In software we have to think in boxes. That is why we have modules, folders, libraries, and components. Each one is a box we can give a meaning, and we know roughly what is inside. That is what takes us from a need, such as "I need to find my drill for this," to actually having the drill in hand.
 
+![A smiling stick figure sits sideways on an office chair at a desk, looking at a monitor; on the desk in front, a computer tower is shown in x-ray, its inside a small two-floor warehouse of identical cardboard boxes stacked neatly on pallets, with a little forklift carrying a box]({{ '/assets/images/cpu-warehouse.svg' | relative_url }})
+
 A codebase works the same way. I need to know where the price gets recorded at the moment the user places the order. Where is that? I need a short series of boxes, three to ten of them: the modules of the system. I open one, find the boxes inside, and say: the prices ought to be in the large orders box; inside orders, at the moment of booking; inside booking, in the prices part. I open that box and I may be looking at some hundreds of lines I still have to scan. The structure of the boxes is what gets me there in three jumps, from the need to the code that matters.
 
 That is the point of a box. We have a finite mind, and we like having many things. We used to collect clay figurines; now we collect interfaces that hide three modules: one making HTTP calls, another writing files, the last talking to a database. Software architecture is finding the boxes for the things we collect today.
