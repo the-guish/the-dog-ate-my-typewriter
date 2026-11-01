@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img" aria-labelledby="t">
-  <title id="t">A stick figure stands next to one big black box, wider than a table and taller than the figure</title>
+  <title id="t">A stick figure with a confounded face stands next to one big black box, wider than a table and taller than the figure</title>
   <style>
     path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
     .ink { stroke: #222; stroke-width: 1.6; }
@@ -89,4 +89,7 @@
 <path class="ink" d="M68.1,203.4 Q54.5,232.1 42.8,260.8"/>
 <path class="ink" d="M67.6,201.9 Q78.7,232.2 89.3,261.8"/>
 <path class="ink" d="M67.7,203.0 Q79.9,231.5 90.5,260.9"/>
+<path class="ink" d="M57.0,109.0 L62.0,112.5 L57.0,116.0"/>
+<path class="ink" d="M75.0,109.0 L70.0,112.5 L75.0,116.0"/>
+<path class="ink" d="M58.0,123.0 L61.0,120.5 L64.0,123.5 L67.0,120.5 L70.0,123.5 L73.5,120.5"/>
 </svg>
