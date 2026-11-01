@@ -64,23 +64,17 @@ With boxes, it finds the right box, opens it, and reads what it needs. That take
 A black box is something we can't see inside: we know what it does, not how it does it. A glass box is the opposite. It's transparent, we can see what is happening inside and correlate that with its external behavior.
 
 
-These days I hear a lot of programmers ask, "why would I review anything, if the AI already knows how to do it all, or the AI can review itself?" or from others "There is no way I can find the time for reviewing what's piling up in my desk". That posture, in its more pure version, treats the software artifact as a black box. We do not know how is it built inside we only care about how it behaves and interacts with the rest of the world. That I consider a valid strategy in many cases.
-
-
-On another end, it is also posible pursue a glass-box approach, closer to what was assumed as normal in pre-AI era, we actually review the code and approve when we get to a reasonable level of shared understanding according to some criteria, many times tacit.
-In this second approach, the throughput would be less, the ability of the humans to maintain and support the system would be higher.
-And it is a valid strategy in many cases.
-
+These days I hear a lot of programmers ask, "why would I review anything, if the AI already knows how to do it all, or the AI can review itself?" or from others "There is no way I can find the time for reviewing what's piling up in my desk".
 
 How much to review the code is the same formula of before, and it is dependent on which position you take in terms of expected throughput, technical debt and investment in tooling and architechture beforehand.
 
-If you accept "classic" throughput, in terms of your team, a full glass-box policy would work. And my personal stance is that is still valid for selected pieces of the system where we want to keep a strong grip.
+If you accept "classic" throughput, in terms of your team, a full review, glass-box, policy would work. And my personal stance is that is still valid for selected pieces of the system where we want to keep a strong grip.
 
-If you favor throughtput, black boxes need to appear, and that is ok. You do not have to review, if you do not want to, what is inside the smaller boxes. But you will be more efficient and keep the throughput for longer time if you know where to find them with confidence.
+If you favor throughtput, black boxes need to appear, and that is ok. You do not have to review, if you do not want to, what is inside the smaller boxes. But depending on how it is done it may face a gradual degradation on the coding agents performance as the system grows, if it does not get some ugly surprise before that.
 
-You do have to take part in designing the structure of the boxes, and shaping the AI’s workflows so it can map requirements onto them. The AI then works faster, and creates fewer problems for you to review.
+The simplest technique “ask, skim a little, merge” over time produces just one thing: a gigantic black box.
 
-Skip that, and “ask, skim a little, merge” produces just one thing: a gigantic black box.
+So...
 
 For the volume of code we handle now, hoping for a glass box would not meet the business expectations at most of the organizations. Going full black will hit limits as the system grows.
 
