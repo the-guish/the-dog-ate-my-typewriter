@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img" aria-labelledby="t">
-  <title id="t">A smiling stick figure sits at a desk, looking at a monitor that stands behind a computer tower; the tower, in front, is shown in x-ray, its inside a small two-floor warehouse of identical cardboard boxes stacked neatly on pallets, with a little forklift carrying a box</title>
+  <title id="t">A smiling stick figure sits sideways on an office chair at a desk, looking at a monitor; on the desk in front, a computer tower is shown in x-ray, its inside a small two-floor warehouse of identical cardboard boxes stacked neatly on pallets, with a little forklift carrying a box</title>
   <style>
     path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
     .ink { stroke: #222; stroke-width: 1.6; }
