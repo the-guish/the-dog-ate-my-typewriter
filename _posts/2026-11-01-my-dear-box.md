@@ -16,7 +16,7 @@ Humans like things. We like making them, having them, trading them, and giving t
 
 Organizing helps because the mind is finite. We like having many things, and we cannot keep a record of that many things at once. While someone, after long practice, can recite [79 digits](https://www.science.org/doi/10.1126/science.7375930), most of us cannot remember more than [about seven](https://labs.la.utexas.edu/gilden/files/2016/04/MagicNumberSeven-Miller1956.pdf) or [four](https://doi.org/10.1017/S0140525X01003922) items on a supermarket list. I never get to whatever came after "butter".
 
-That's where boxes get interesting. If I have two hundred things to remember, where are they? I could have ten boxes with 20 things each. My mind can then only thing in which of the 10 boxes may be the one I want, then scan among 20. That is the great function of a box.
+That’s where boxes get interesting. If I have two hundred things to remember, where are they? I could have ten boxes with twenty things each. My brain then only has to work out which of the ten boxes holds the one I want, and scan the twenty inside it. That is the great function of a box.
 
 Large warehouses work the same way. Goods go into small boxes, then into larger containers, then into aisles, then into whole sheds or buildings.
 
