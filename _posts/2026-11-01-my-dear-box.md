@@ -42,13 +42,15 @@ In software we have to think in boxes. That is why we have modules, folders, lib
 
 ![A smiling stick figure sits sideways on an office chair at a desk, looking at a monitor; on the desk in front, a computer tower is shown in x-ray, its inside a small two-floor warehouse of identical cardboard boxes stacked neatly on pallets, with a little forklift carrying a box]({{ '/assets/images/cpu-warehouse.svg' | relative_url }})
 
-A codebase works the same way. I need to know where the price gets recorded at the moment the user places the order. Where is that? I need a short series of boxes, three to ten of them: the modules of the system. I open one, find the boxes inside, and say: the prices ought to be in the large orders box; inside orders, at the moment of booking; inside booking, in the prices part. I open that box and I may be looking at some hundreds of lines I still have to scan. The structure of the boxes is what gets me there in three jumps, from the need to the code that matters.
+A codebase works the same way. I need to know where the price gets recorded at the moment the user places the order. Where is that? I need a short series of boxes, three to ten of them: the modules of the system. I open one, find the boxes inside, and say: the prices ought to be in the large orders box; inside orders, at the moment of booking; inside booking, in the prices part. I open that box and I may be looking at some hundreds of lines I still have to scan.
+
+The structure of the boxes is what gets me there in three jumps, from the need to the code that matters.
 
 That is the point of a box. We have a finite mind, and we like having many things. We used to collect clay figurines; now we collect interfaces that hide three modules: one making HTTP calls, another writing files, the last talking to a database. Software architecture is finding the boxes for the things we collect today.
 
 ## Why splitting still matters
 
-Why do boxes still matter, if an AI can do the work? Maybe one day they won't. That day might come next week, in two years, in two centuries, or never: a day when nobody thinks about code anymore, and the whole system is one gigantic black box behind a voice interface. You say, "God of the AI, orders from tier-2 customers have to show up in next year's pricing policy," and nobody touches anything else.
+Why do boxes still matter, if an AI can do the work? Maybe one day they won’t matter. That day might come next week, in two years, in two centuries, or never: a day when nobody thinks about code anymore, and the whole system is one gigantic black box behind a voice interface. You say, "God of the AI, orders from tier-2 customers have to show up in next year's pricing policy," and nobody touches anything else.
 
 We are not there yet. As of late 2026, the strongest models available to consumers and regular companies have context windows of about a million tokens, and they [work best well below that limit](https://www.trychroma.com/research/context-rot). A large codebase doesn't fit in a single call. We top out at four to seven items; models handle far more. But their capacity is still finite.
 
@@ -76,7 +78,7 @@ If you favor throughput, black boxes need to appear, and that is okay. You do no
 
 The simplest technique, "ask, skim a little, merge," over time produces just one thing: a gigantic black box.
 
-I measured the same agent on the same repository before and after refactoring it into better boxes: the messy repo was close to 30% more expensive. The test was informal and on a private company repository I cannot share, so you might try it yourself, or look at papers such as [RepoMod-Bench](https://arxiv.org/abs/2602.22518) (I've only read its abstract and conclusion :) ).
+I measured the same agent on the same repository before and after refactoring it into better boxes: the messy repo was close to 30% more expensive. The test was informal and on a private company repository I cannot share, so you might try it yourself, or look at papers such as [RepoMod-Bench](https://arxiv.org/abs/2602.22518), of which I’ve only read the abstract and conclusion :). It will show you that, for an agent, **a 10,000-line project and a 50,000-line one are different games**.
 
 ![A stick figure with a confounded face stands next to one big black box, wider than a table and taller than the figure]({{ '/assets/images/box-big-black.svg' | relative_url }})
 
