@@ -16,19 +16,19 @@ Humans like things. We like making them, having them, trading them, and giving t
 
 Organizing helps because the mind is finite. We like having many things, and we cannot keep a record of that many things at once. While someone, after long practice, can recite [79 digits](https://www.science.org/doi/10.1126/science.7375930), most of us cannot remember more than [about seven](https://labs.la.utexas.edu/gilden/files/2016/04/MagicNumberSeven-Miller1956.pdf) or [four](https://doi.org/10.1017/S0140525X01003922) items on a supermarket list. I never get to whatever came after "butter".
 
-That's where boxes get interesting. If I have a hundred things to remember, where are they? I can have ten boxes of ten, and a label on each box. My mind can then find, with less effort, where each of those hundred things is when I need it. That is the great function of a box.
+That's where boxes get interesting. If I have two hundred things to remember, where are they? I could have ten boxes with 20 things each. My mind can then only thing in which of the 10 boxes may be the one I want, then scan among 20. That is the great function of a box.
 
-Large warehouses work the same way. Goods go into small boxes, then into larger containers, then into aisles, then into whole sheds, and sometimes into separate buildings: one property in one city with four sheds, another property in another city with seven. All of that has to live in an inventory system.
+Large warehouses work the same way. Goods go into small boxes, then into larger containers, then into aisles, then into whole sheds or buildings.
 
-There is no way to run a large project without a structure, and without a plan for how those boxes are organized. If you have ever moved house, you have a sense of what it takes. You put everything into boxes, you move, and then you entertain yourself searching for your things inside those boxes. A house move is the smallest version of a complex project. Most logistics work is thousands or millions of times that, and it needs much more advanced schemes.
+There is no way to run a large scale project without a structure, and without a plan for how those boxes are organized. If you have ever moved house, you have a sense of what it takes just some dozens of boxes. You put everything into boxes, you move, and then you entertain yourself searching for your things inside those boxes. You need to have a minimal structure.
 
-In one of my past lives, I was an Oracle Applications implementer, working on ERP and supply chain. The Oracle SCM suite is an interesting system: it runs from handheld barcode scanners on the warehouse floor to Bayesian forecasting algorithms, and I saw it up close letting large companies achieve milestones like [tracking inventory across many countries and forecasting material requirements](https://www.slideshare.net/slideshow/zero-downtime-for-oracle-ebusiness-suite-on-oracle-exalogic/40254433), down to the individual shelf.
+In one of my past lives, I was an Oracle consultant. Their ASCP is an interesting system: it runs from handheld barcode scanners on the warehouse floor to Bayesian forecasting algorithms, and I saw it up close letting companies the size of Sherwin-Williams achieve milestones like tracking inventory across many countries and forecasting material requirements in a few hours, down to the individual shelf.
 
 Behind much of it sits a key domain entity: a "containers" table with a parent ID. Experts like Fede Elicetche know it by its official name, WMS_LICENSE_PLATE_NUMBERS.
 
 For today, just know that each record is something that can sit inside something else: a box on a pallet, a pallet in a shipping container, all of them tagged.
 
-Some key tables and fields turn millions of loose items into a hierarchy. Move a pallet, and everything on it moves in one step.
+Some key tables and fields turn millions of loose items into a hierarchy. Move a pallet, and everything on it moves in one step. Look up, in milliseconds, where any item of a multi-billion-dollar company sits, anywhere in the world.
 
 Never underestimate a well-modeled box.
 

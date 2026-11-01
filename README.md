@@ -10,7 +10,17 @@ About things I wanted to share with you but I'm lazy or tired to write myself.  
 
 ## Preview locally
 
+With Docker:
+
+```sh
+./preview.sh
+```
+
+With Ruby and Bundler:
+
 ```sh
 bundle install
 bundle exec jekyll serve --drafts
 ```
+
+Open http://localhost:4000/the-dog-ate-my-typewriter/.
