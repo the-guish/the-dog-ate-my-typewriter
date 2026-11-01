@@ -4,9 +4,9 @@ date: 2026-11-01
 tags: [application-architecture]
 ---
 
-Why humankind likes boxes so much? There is a reason, and it is old. When people started making tools, we made arrowheads, fishhooks, and little figures of the divinities we had. We were nomads, so we carried them. At the beginning, I imagine, in bags.
+Why does humankind like boxes so much? There is a reason, and it is old. Long ago, people made arrowheads, fishhooks, and little clay figurines. We were nomads, so we carried them. At the beginning, I imagine, in bags.
 
-Bags matter too. They are important, and useful. Over time they gave way to boxes, above all in modern times, or from the point we could do carpentry. That has been a constant through the whole of human history. We have every kind of box. The ones shaped like a rectangular prism are the popular ones, and they run from a cardboard shoebox to a steel safe, or a shipping container that spends years crossing the ocean.
+Bags matter too. They are important, and useful. But once we settled down, boxes followed: clay pots first, then wooden chests once we learned carpentry. Boxes have been with us ever since. We have every kind of box. The ones shaped like a rectangular prism are the popular ones, and they run from a cardboard shoebox to a steel safe, or a shipping container that spends years crossing oceans.
 
 What is so captivating about a box?
 
@@ -18,7 +18,7 @@ Organizing helps because the mind is finite. We like having many things, and we 
 
 That's where boxes get interesting. If I have a hundred things to remember, where are they? I can have ten boxes of ten, and a label on each box. My mind can then find, with less effort, where each of those hundred things is when I need it. That is the great function of a box.
 
-Large warehouses work the same way. Goods go into small boxes, then into larger containers, then into aisles, then into whole sheds, and sometimes into separate buildings: one property in one city with four sheds, another property in another city with seven. All of that has to live in an inventory system. A logistics company could not survive without boxes, smaller boxes, and larger boxes, one inside another.
+Large warehouses work the same way. Goods go into small boxes, then into larger containers, then into aisles, then into whole sheds, and sometimes into separate buildings: one property in one city with four sheds, another property in another city with seven. All of that has to live in an inventory system. 
 
 There is no way to run a large project without a structure, and without a plan for how those boxes are organized. If you have ever moved house, you have a sense of what it takes. You put everything into boxes, you move, and then you entertain yourself searching for your things inside those boxes. A house move is the smallest version of a complex project. Most logistics work is thousands or millions of times that, and it needs much more advanced schemes.
 
@@ -52,7 +52,7 @@ We are not there yet. As of late 2026, the strongest models available to consume
 
 Nobody has settled on a general, absolute way to work across millions of lines of code. So those millions of lines still have to be organized to fit the context window of the models, and the "context window" of humans.
 
-Software architecture is the answer to that, and it means discovering or designing the large boxes, with the medium boxes and the small boxes, and putting the lines of code inside them, so a person can know where each thing lives, and so a model can work on a part of the system by mapping a requirement straight onto those boxes.
+Software architecture holds answers to that, and it means discovering or designing the large boxes, with the medium boxes and the small boxes, and putting the lines of code inside them, so a person can know where each thing lives, and so a model can work on a part of the system by mapping a requirement straight onto those boxes.
 
 Take the requirement from before: change the pricing policy for tier-2 customers, in a two-line prompt. Without boxes, the model has to scan thousands of lines written in different patterns, which wastes time and money and produces suboptimal results.
 
@@ -63,7 +63,7 @@ With boxes, it finds the right box, opens it, and reads what it needs. That take
 A black box usually means something whose inside we do not know: we see what happens outside, and not what happens inside. A glass box, a box of glass, a transparent one, is something we understand completely. 
 
 
-These days I hear a lot of programmers ask, "why would I review anything, if the AI already knows how to do it all, or the AI can review itself?". That posture, in its more pure version, treats the software artifact as a black box. We do not know how is it built inside we only care about how it behaves and interacts with the rest of the world. That I consider a valid strategy in many cases.
+These days I hear a lot of programmers ask, "why would I review anything, if the AI already knows how to do it all, or the AI can review itself?" or from others "There is no way I can find the time for reviewing what's piling up in my desk". That posture, in its more pure version, treats the software artifact as a black box. We do not know how is it built inside we only care about how it behaves and interacts with the rest of the world. That I consider a valid strategy in many cases.
 
 
 On another end, it is also posible pursue a glass-box approach, closer to what was assumed as normal in pre-AI era, we actually review the code and approve when we get to a reasonable level of shared understanding according to some criteria, many times tacit.
