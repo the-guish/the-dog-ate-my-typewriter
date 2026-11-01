@@ -70,6 +70,8 @@ If your team accepts "classic" throughput, a full-review, glass-box policy works
 
 If you favor throughput, black boxes need to appear, and that is okay. You do not have to review what is inside the smaller boxes if you do not want to. But depending on how it is done, the coding agents' performance may gradually degrade as the system grows, unless an ugly surprise hits first.
 
+![A stick figure stands next to a small glass box on the floor; behind it, two black boxes sit on a table]({{ '/assets/images/box-glass-and-black.svg' | relative_url }})
+
 The simplest technique, "ask, skim a little, merge," over time produces just one thing: a gigantic black box.
 
 I measured the same agent on the same repository before and after refactoring it into better boxes: the messy repo was close to 30% more expensive. The test was informal and on a private company repository I cannot share, so you might try it yourself, or look at papers such as [RepoMod-Bench](https://arxiv.org/abs/2602.22518) (I've only read its abstract and conclusion :) ).
