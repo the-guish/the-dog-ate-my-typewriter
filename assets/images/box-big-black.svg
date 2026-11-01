@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img" aria-labelledby="t">
+  <title id="t">A stick figure stands next to a black box the size of a big closet</title>
+  <style>
+    .ink { stroke: #222; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .glass { fill: #bfdde9; fill-opacity: 0.6; stroke: #222; stroke-width: 2; }
+    .shine { stroke: #fff; stroke-width: 3; stroke-linecap: round; opacity: 0.9; }
+    .black { fill: #1c1c1c; stroke: #111; stroke-width: 2; }
+    .wood { fill: #c8c8c4; stroke: #222; stroke-width: 2; }
+    .floor { stroke: #222; stroke-width: 2; }
+  </style>
+  <rect width="400" height="300" fill="#fff"/>
+  <line class="floor" x1="20" y1="260" x2="380" y2="260"/>
+  <rect class="black" x="130" y="80" width="130" height="180"/>
+  <g class="ink">
+    <circle cx="80" cy="162" r="12" fill="#fff"/>
+    <line x1="80" y1="174" x2="80" y2="220"/>
+    <line x1="80" y1="186" x2="60" y2="208"/>
+    <line x1="80" y1="186" x2="100" y2="208"/>
+    <line x1="80" y1="220" x2="64" y2="260"/>
+    <line x1="80" y1="220" x2="96" y2="260"/>
+  </g>
+</svg>
