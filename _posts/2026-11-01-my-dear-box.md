@@ -54,7 +54,9 @@ Nobody has settled on a general, absolute way to work across millions of lines o
 
 Software architecture is the answer to that, and it means discovering or designing the large boxes, with the medium boxes and the small boxes, and putting the lines of code inside them, so a person can know where each thing lives, and so a model can work on a part of the system by mapping a requirement straight onto those boxes.
 
-Give it the requirement I mentioned, changing the customer's pricing policy, in a two-line prompt. Instead of having to scan thousands of lines of code written in different patterns, losing time and effectiveness and spending money, it can first identify the box where that code lives, and go read the whole box. That is the difference. The model can probably read that whole box in five seconds. It would take us hours or days, or we would have had to know the box beforehand. Boxes are still relevant to productivity, for the AI working alone and for the human working alone.
+Take the requirement from before: change the pricing policy for tier-2 customers, in a two-line prompt. Without boxes, the model has to scan thousands of lines written in different patterns, which wastes time and money and produces suboptimal results.
+
+With boxes, it finds the right box, opens it, and reads what it needs. That takes the model seconds. For people, the gain is similar: minutes to answer if they know the code, hours to onboard instead of days if they don’t.
 
 ## A glass box with small black boxes inside
 
