@@ -22,7 +22,9 @@ There is no way to run a large project without a structure, and without a plan f
 
 In a past life I was an Oracle Applications implementer, working on ERP and supply chain. The Oracle SCM suite is an interesting system: it runs from handheld barcode scanners on the warehouse floor to Bayesian forecasting algorithms, and it lets a large company track inventory across many countries, down to the individual shelf. I saw it up close when I helped roll it out at Sherwin-Williams Argentina, part of a regional effort that later [cut demand-forecasting time by about 94%](https://www.slideshare.net/slideshow/zero-downtime-for-oracle-ebusiness-suite-on-oracle-exalogic/40254433).
 
-The main domain entity behind all of it is "container" with a parent id.
+Behind much of it sits a key domain entity: a "containers" table with a parent ID. Experts like Fede Elicetche know it by its official name, WMS_LICENSE_PLATE_NUMBERS.
+
+For today, just know that each record is something that can sit inside something else: a box on a pallet, a pallet in a shipping container, all of them tagged.
 
 ## The same mind, in software
 
