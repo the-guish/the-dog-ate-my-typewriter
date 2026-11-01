@@ -4,6 +4,7 @@
     path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
     .ink { stroke: #222; stroke-width: 1.6; }
     .faint { stroke: #222; stroke-width: 1; opacity: 0.35; stroke-dasharray: 3 3; }
+    .wall { stroke: #222; stroke-width: 1.1; opacity: 0.4; }
     .hatch { stroke: #555; stroke-width: 0.8; }
     .shine { stroke: #fff; stroke-width: 2.5; }
     .glass { fill: #bfdde9; fill-opacity: 0.55; stroke: none; }
@@ -11,9 +12,7 @@
     .wtop { fill: #e2e2dc; } .wfront { fill: #c8c8c4; } .wside { fill: #aeaea8; }
   </style>
   <rect width="400" height="300" fill="#fff"/>
-<path class="ink" d="M13.5,261.0 Q201.1,260.6 388.4,260.8"/>
-<path class="ink" d="M12.8,262.0 Q198.7,260.9 386.7,261.8"/>
-<path class="faint" d="M59.8,240.9 Q223.7,241.1 386.9,239.2"/>
+<path class="wall" d="M13.8,224.8 Q200.7,225.0 386.9,223.1"/>
 <path class="ink" d="M172.7,163.6 Q174.2,193.6 173.9,224.7"/>
 <path class="ink" d="M171.5,162.8 Q171.0,195.0 172.0,226.8"/>
 <path class="ink" d="M308.9,163.6 Q307.7,193.4 308.7,224.7"/>
