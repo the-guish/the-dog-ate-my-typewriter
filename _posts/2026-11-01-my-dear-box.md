@@ -48,7 +48,7 @@ That is the point of a box. We have a finite mind, and we like having many thing
 
 Why do boxes still matter, if an AI can do the work? Maybe one day they won't. That day might come next week, in two years, in two centuries, or never: a day when nobody thinks about code anymore, and the whole system is one gigantic black box behind a voice interface. You say, "God of the AI, orders from tier-2 customers have to show up in next year's pricing policy," and nobody touches anything else.
 
-We are not there yet. As of late 2026, the strongest models available to consumers and regular companies have context windows of about a million tokens, and they work best well below that limit. A large codebase doesn't fit in a single call. We top out at four to seven items; models handle far more. But their capacity is still finite.
+We are not there yet. As of late 2026, the strongest models available to consumers and regular companies have context windows of about a million tokens, and they [work best well below that limit](https://www.trychroma.com/research/context-rot). A large codebase doesn't fit in a single call. We top out at four to seven items; models handle far more. But their capacity is still finite.
 
 Nobody has settled on a general way to work across millions of lines of code. So those millions of lines still have to be organized to fit the context window of the models, and the "context window" of humans. The answer to that is software architecture.
 
