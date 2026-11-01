@@ -70,6 +70,4 @@ For the volume of code we handle now, hoping for a glass box is not realistic. Y
 
 So the strategy is not one large black box, and it is not a glass box of the old kind either. The answer is a glass box with small black boxes inside. You will have many black boxes, three hundred to five thousand lines of code at most, depending on the threshold you choose to set. You do not have to review those black boxes. Because they interact with each other, every one of them has to sit inside a glass box that you do understand, where you know how each part connects to the next.
 
-The absolute, total answer to all of those questions people ask about this is: a glass box with small black boxes inside.
-
-You're welcome. You're welcome. You're welcome.
+The absolute, total answer to all of those questions people ask about this is: a glass box of black boxes.
