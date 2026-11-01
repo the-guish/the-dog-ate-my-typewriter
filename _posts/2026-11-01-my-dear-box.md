@@ -70,9 +70,13 @@ If your team accepts "classic" throughput, a full-review, glass-box policy works
 
 If you favor throughput, black boxes need to appear, and that is okay. You do not have to review what is inside the smaller boxes if you do not want to. But depending on how it is done, the coding agents' performance may gradually degrade as the system grows, unless an ugly surprise hits first.
 
+![A smiling stick figure stands next to a small glass box on the floor; behind it, two black boxes sit on a table]({{ '/assets/images/box-glass-and-black.svg' | relative_url }})
+
 The simplest technique, "ask, skim a little, merge," over time produces just one thing: a gigantic black box.
 
 I measured the same agent on the same repository before and after refactoring it into better boxes: the messy repo was close to 30% more expensive. The test was informal and on a private company repository I cannot share, so you might try it yourself, or look at papers such as [RepoMod-Bench](https://arxiv.org/abs/2602.22518) (I've only read its abstract and conclusion :) ).
+
+![A stick figure with a confounded face stands next to one big black box, wider than a table and taller than the figure]({{ '/assets/images/box-big-black.svg' | relative_url }})
 
 For the volume of code we handle now, a full glass box would not meet business expectations at most organizations. Going full black will hit limits as the system grows.
 
@@ -81,3 +85,5 @@ So the answer is neither. What you need are small black boxes, each a few hundre
 You do not have to review the contents of each one. But you do have to know the glass box that holds it, and its contract with the boxes around it. That way you can efficiently switch to manual mode, point your coding agent at it, know what needs testing, or rebuild it from scratch.
 
 In short: a glass box of black boxes.
+
+![A stick figure with an upside-down smiley face stands next to a two-door glass server cabinet with three shelves holding a few black boxes and two glass boxes]({{ '/assets/images/box-glass-cabinet.svg' | relative_url }})
