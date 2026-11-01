@@ -58,28 +58,24 @@ Take the requirement from before: change the pricing policy for tier-2 customers
 
 With boxes, it finds the right box, opens it, and reads what it needs. That takes the model seconds. For people, the gain is similar: minutes to answer if they know the code, hours to onboard instead of days if they don’t.
 
-## What is better than a black box or a glassbox?
+## What is better than a black box or a glass box?
 
+A black box is something we cannot see inside: we know what it does, not how it does it. A glass box is the opposite. It is transparent: we can see what is happening inside and connect that with its external behavior.
 
-A black box is something we can't see inside: we know what it does, not how it does it. A glass box is the opposite. It's transparent, we can see what is happening inside and correlate that with its external behavior.
+These days I hear a lot of developers ask, “Why would I review anything, if the AI already knows how to do it all, or can review itself?” Others say, “There is no way I can find the time to review what’s piling up on my desk.”, many "I don't know when or how much to review".
 
+The level to review has the same formula as before. It depends on where you stand on expected throughput, technical debt, and how much you invested in tooling and architecture beforehand.
 
-These days I hear a lot of programmers ask, "why would I review anything, if the AI already knows how to do it all, or the AI can review itself?" or from others "There is no way I can find the time for reviewing what's piling up in my desk".
+If your team accepts “classic” throughput, a full-review, glass-box policy works. My personal stance is that it is still valid for selected pieces of the system where we want to keep a strong grip.
 
-How much to review the code is the same formula of before, and it is dependent on which position you take in terms of expected throughput, technical debt and investment in tooling and architechture beforehand.
+If you favor throughput, black boxes need to appear, and that is okay. You do not have to review what is inside the smaller boxes if you do not want to. But depending on how it is done, the coding agents’ performance may gradually degrade as the system grows, if an ugly surprise does not hit first.
 
-If you accept "classic" throughput, in terms of your team, a full review, glass-box, policy would work. And my personal stance is that is still valid for selected pieces of the system where we want to keep a strong grip.
+The simplest technique, “ask, skim a little, merge,” over time produces just one thing: a gigantic black box.
 
-If you favor throughtput, black boxes need to appear, and that is ok. You do not have to review, if you do not want to, what is inside the smaller boxes. But depending on how it is done it may face a gradual degradation on the coding agents performance as the system grows, if it does not get some ugly surprise before that.
+For the volume of code we handle now, a full glass box would not meet business expectations at most organizations. Going full black will hit limits as the system grows.
 
-The simplest technique “ask, skim a little, merge” over time produces just one thing: a gigantic black box.
+So the answer is neither. What you need are small black boxes, each a few hundred to a few thousand lines of code, depending on the threshold you set, with a clear understanding of how they relate.
 
-So...
+In short: a glass box of black boxes.
 
-For the volume of code we handle now, hoping for a glass box would not meet the business expectations at most of the organizations. Going full black will hit limits as the system grows.
-
-So the strategy is not one large black box, and it is not a glass box either.
-
-The answer is a glass box with small black boxes inside. You’ll have many black boxes, each a few hundred to a few thousand lines of code, depending on the threshold you set.
-
-You don’t have to review the contents of each one. But you do have to know what the glass box that holds it and what is the contract with the other boxes around, so you can efficiently go manual mode, or point your code agent to it, understand what needs to be tested or rebuild it from scratch.
+You do not have to review the contents of each one. But you do have to know the glass box that holds it, and its contract with the boxes around it. That way you can efficiently switch to manual mode, point your coding agent at it, know what needs testing, or rebuild it from scratch.
