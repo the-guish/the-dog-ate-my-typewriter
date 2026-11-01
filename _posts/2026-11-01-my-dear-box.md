@@ -26,8 +26,6 @@ In one of my past lives, I was an Oracle consultant. Their ASCP is an interestin
 
 Behind much of it sits a key domain entity: a "containers" table with a parent ID. Experts like Fede Elicetche know it by its official name, WMS_LICENSE_PLATE_NUMBERS.
 
-For today, just know that each record is something that can sit inside something else: a box on a pallet, a pallet in a shipping container, all of them tagged.
-
 Some key tables and fields turn millions of loose items into a hierarchy. Move a pallet, and everything on it moves in one step. Look up, in milliseconds, where any item of a multi-billion-dollar company sits, anywhere in the world.
 
 Never underestimate a well-modeled box.
