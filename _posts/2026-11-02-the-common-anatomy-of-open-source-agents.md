@@ -4,7 +4,7 @@ date: 2026-11-02
 tags: [application-architecture]
 ---
 
-Codex, Gemini CLI, OpenCode, Goose, OpenHands, Hermes Agent, OpenClaw, OpenWorker, Open WebUI, and LibreChat look like different products. Some are terminal coding agents. Some are web chat platforms. Some are always-on assistants reachable from Slack, Telegram, or WhatsApp. Their current public docs show this spread clearly: Codex exposes an app-server, SDK, and CLI; Gemini CLI is a terminal agent; OpenCode runs a TUI over a local server; OpenHands provides agents, conversations, tools, workspaces, events, and an agent server; LibreChat and Open WebUI expose agents and tools in self-hosted chat UIs; OpenClaw and Hermes focus on gateways, messaging channels, memory, and scheduled automations. ([developers.openai.com](https://developers.openai.com/blog/codex-as-a-platform))
+Codex, Gemini CLI, OpenCode, Goose, OpenHands, Hermes Agent, OpenClaw, OpenWorker, Open WebUI, and LibreChat look like different products. Some are terminal coding agents. Some are web chat platforms. Some are always-on assistants reachable from Slack, Telegram, or WhatsApp. Their current public docs show this spread clearly: [Codex exposes an app-server, SDK, and CLI](https://developers.openai.com/blog/codex-as-a-platform); Gemini CLI is a terminal agent; OpenCode runs a TUI over a local server; OpenHands provides agents, conversations, tools, workspaces, events, and an agent server; LibreChat and Open WebUI expose agents and tools in self-hosted chat UIs; OpenClaw and Hermes focus on gateways, messaging channels, memory, and scheduled automations.
 
 But underneath, they share the same shape.
 
@@ -142,7 +142,7 @@ The common strategy is:
 
 Tool results are often the biggest source of context growth. A shell command can print thousands of lines. A web fetch can return a whole page. A file search can dump too much source code. Good systems return a preview to the model and keep the full output somewhere else, giving the model a path or handle if it needs more.
 
-Many systems also hide rarely used tools until needed. LibreChat calls this deferred tools: the model gets a search tool instead of every MCP schema up front. Open WebUI has a similar tool-search mechanism for large MCP setups. ([librechat.ai](https://www.librechat.ai/docs/features/agents))
+Many systems also hide rarely used tools until needed. [LibreChat calls this deferred tools](https://www.librechat.ai/docs/features/agents): the model gets a search tool instead of every MCP schema up front. Open WebUI has a similar tool-search mechanism for large MCP setups.
 
 The design lesson is simple: context management is not one summarizer. It is a set of gates around everything that enters the next model call.
 
@@ -150,15 +150,15 @@ The design lesson is simple: context management is not one summarizer. It is a s
 
 Tools are where agents become dangerous and useful.
 
-A tool may be a safe function, a file edit, a shell command, a browser action, an HTTP call, an MCP tool, provider-hosted web search, or a whole sub-agent. MCP itself is an open specification for connecting AI clients to external tools and data; MCP servers can expose tools, resources, prompts, and instructions, and clients discover tool schemas before the model calls them. ([developers.openai.com](https://developers.openai.com/plugins/concepts/mcp-server))
+A tool may be a safe function, a file edit, a shell command, a browser action, an HTTP call, an MCP tool, provider-hosted web search, or a whole sub-agent. [MCP itself is an open specification](https://developers.openai.com/plugins/concepts/mcp-server) for connecting AI clients to external tools and data; MCP servers can expose tools, resources, prompts, and instructions, and clients discover tool schemas before the model calls them.
 
 Most systems split tool work into four stages.
 
 First, **tool dispatch** decides which tool schemas the model sees. After the model responds, it validates tool arguments, repairs malformed calls when possible, routes each call, runs safe calls in parallel, and turns failures into tool results the model can read.
 
-Second, **approval policy** decides whether a call may run. This is separate from execution. Approval can use modes, rules, remembered grants, risk classifiers, model judges, admin policy, or human review. Codex app-server, for example, supports approval flows for command execution and file changes; OpenAI’s Codex safety writeup also describes auto-review for some sandbox-boundary requests. ([learn.chatgpt.com](https://learn.chatgpt.com/docs/app-server?translationFallback=ko-KR))
+Second, **approval policy** decides whether a call may run. This is separate from execution. Approval can use modes, rules, remembered grants, risk classifiers, model judges, admin policy, or human review. [Codex app-server, for example, supports approval flows](https://learn.chatgpt.com/docs/app-server?translationFallback=ko-KR) for command execution and file changes; OpenAI’s Codex safety writeup also describes auto-review for some sandbox-boundary requests.
 
-Third, **execution** runs the call. Built-in tools run in the harness process. Shell tools use a process executor. MCP tools run in another process or remote server. Open WebUI’s docs make this distinction clear: native tools, workspace tools, MCP/HTTP tools, OpenAPI tools, and terminal integrations have different execution boundaries and risks. ([docs.openwebui.com](https://docs.openwebui.com/features/extensibility/plugin/tools/))
+Third, **execution** runs the call. Built-in tools run in the harness process. Shell tools use a process executor. MCP tools run in another process or remote server. [Open WebUI’s docs](https://docs.openwebui.com/features/extensibility/plugin/tools/) make this distinction clear: native tools, workspace tools, MCP/HTTP tools, OpenAPI tools, and terminal integrations have different execution boundaries and risks.
 
 Fourth, **result shaping** bounds the output before it returns to the prompt.
 
@@ -224,7 +224,7 @@ The cost is that the turn often dies with the process. Reconnection usually mean
 
 Many coding agents use a local server. The server owns sessions, tools, permissions, and execution. The terminal, web UI, desktop app, IDE extension, or mobile client attaches to it.
 
-OpenCode documents this explicitly: running `opencode` starts a TUI and a server, where the TUI is a client; the server exposes an OpenAPI endpoint and supports multiple clients. Codex app-server similarly exists for product integrations that need authentication, conversation history, approvals, and streamed agent events. ([docs.opencode.ai](https://docs.opencode.ai/docs/server/))
+[OpenCode documents this explicitly](https://docs.opencode.ai/docs/server/): running `opencode` starts a TUI and a server, where the TUI is a client; the server exposes an OpenAPI endpoint and supports multiple clients. Codex app-server similarly exists for product integrations that need authentication, conversation history, approvals, and streamed agent events.
 
 This gives you background turns, reconnection, multiple front ends, and a clean language boundary between UI and engine. It costs you a protocol, auth, lifecycle management, pairing, versioning, and more debugging complexity.
 
@@ -238,7 +238,7 @@ This shape is about tenancy, permissions, roles, quotas, sharing, retention, and
 
 Some systems keep the model loop central but run tools elsewhere: a Docker container, remote dev machine, cloud worker, browser, phone, or user laptop.
 
-OpenHands makes this separation explicit with local, container, and remote workspaces, plus an agent server exposing REST and WebSocket endpoints for conversations, files, bash, events, desktop, and VS Code integrations. ([github.com](https://github.com/OpenHands/docs/blob/main/sdk/arch/overview.mdx))
+[OpenHands makes this separation explicit](https://github.com/OpenHands/docs/blob/main/sdk/arch/overview.mdx) with local, container, and remote workspaces, plus an agent server exposing REST and WebSocket endpoints for conversations, files, bash, events, desktop, and VS Code integrations.
 
 This gives isolation and access to the right files or devices. It costs provisioning time, remote latency, credential handling, and more failure modes.
 
@@ -248,9 +248,9 @@ The shared anatomy stays the same, but each kind of product puts weight in diffe
 
 **Coding agents** care most about workspace tools, shell execution, file diffs, language-server feedback, sandboxing, approvals, and restoring files when a conversation rewinds. Their hardest problems are tool safety and context from large repos.
 
-**Chat-channel assistants** care about gateways, sender identity, routing, scheduled work, unattended turns, and approvals over Slack, Telegram, Discord, or email. Hermes describes a single gateway process for Telegram, Discord, Slack, WhatsApp, Signal, and CLI; OpenClaw describes a self-hosted gateway that connects chat apps to coding agents. ([github.com](https://github.com/attentiondotnet/hermes-agent))
+**Chat-channel assistants** care about gateways, sender identity, routing, scheduled work, unattended turns, and approvals over Slack, Telegram, Discord, or email. [Hermes describes a single gateway process](https://github.com/attentiondotnet/hermes-agent) for Telegram, Discord, Slack, WhatsApp, Signal, and CLI; OpenClaw describes a self-hosted gateway that connects chat apps to coding agents.
 
-**Self-hosted chat platforms** care about users, roles, tenants, shared agents, admin policy, files, MCP configuration, and long-term storage. LibreChat’s agent docs show this platform shape: web search, file search, file context, artifacts, MCP, deferred tools, programmatic tool calling, memory, approvals, marketplace, scheduled chats, and an agents API. ([librechat.ai](https://www.librechat.ai/docs/features/agents))
+**Self-hosted chat platforms** care about users, roles, tenants, shared agents, admin policy, files, MCP configuration, and long-term storage. [LibreChat’s agent docs](https://www.librechat.ai/docs/features/agents) show this platform shape: web search, file search, file context, artifacts, MCP, deferred tools, programmatic tool calling, memory, approvals, marketplace, scheduled chats, and an agents API.
 
 **Agent SDKs and canvases** care about composability. They expose conversations, events, tool systems, workspaces, model interfaces, and server APIs so other products can build on top.
 
