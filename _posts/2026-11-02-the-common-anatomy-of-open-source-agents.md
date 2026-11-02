@@ -12,6 +12,21 @@ If you have built a basic LangChain-style agent, you know the core loop: call th
 
 A useful way to read these systems is not by language or framework, but by responsibilities.
 
+## What we did
+
+We compared the ten products by responsibilities. A responsibility is a unit of work the system has to do: send the request to the model, run a tool, persist the conversation. A module is a unit of code: a crate, a package, a directory. Each team cuts and names its modules its own way. Modules from two products rarely line up. Responsibilities do.
+
+We wrote one list of 154 responsibilities and read each product's code at a pinned commit. We started from a blank page on the shape of the modules. We had no reference architecture and no template of boxes to fill.
+
+This distinctive way to compare architectures lets us __discover__ each team's decisions: where it drew a boundary, what it kept together, what it split apart. The method has three advantages. Products with very different code become comparable. Every claim points to a file. And agreement between teams becomes a measurement: when separate teams keep two responsibilities in one module, that is a finding about the problem.
+
+Then we clustered the responsibilities. Two responsibilities belong together when the products keep them in the same module. We named the clusters, ranked them by importance, and drew the twenty-nine most important. The grouping and the positions come from the code. The names, the ranking and the cut at twenty-nine are our judgment.
+
+![The twenty-nine clusters of responsibilities: the main line from the user to the model runs down the middle, the tool side branches left from Turn control, the prompt side right]({{ '/assets/images/agent-clusters.svg' | relative_url }})
+
+
+That provides a wider glance. The rest of this article follows the main flow only: the path of one prompt from the user to the model and back, with the branch for tools. 
+
 ## The main line
 
 For one user prompt, most agent systems follow this path:
