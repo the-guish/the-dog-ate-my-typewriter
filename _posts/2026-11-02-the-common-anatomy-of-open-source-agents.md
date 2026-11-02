@@ -4,6 +4,8 @@ date: 2026-11-02
 tags: [application-architecture]
 ---
 
+What does it takes to build an agent platform, or system, these days?
+
 Codex, Gemini CLI, OpenCode, Goose, OpenHands, Hermes Agent, OpenClaw, OpenWorker, Open WebUI, and LibreChat look like different products. Some are terminal coding agents. Some are web chat platforms. Some are always-on assistants reachable from Slack, Telegram, or WhatsApp. Their current public docs show this spread clearly: [Codex exposes an app-server, SDK, and CLI](https://developers.openai.com/blog/codex-as-a-platform); Gemini CLI is a terminal agent; OpenCode runs a TUI over a local server; OpenHands provides agents, conversations, tools, workspaces, events, and an agent server; LibreChat and Open WebUI expose agents and tools in self-hosted chat UIs; OpenClaw and Hermes focus on gateways, messaging channels, memory, and scheduled automations.
 
 But underneath, they share the same shape.
