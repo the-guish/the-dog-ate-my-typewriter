@@ -76,7 +76,7 @@ If you favor throughput, black boxes need to appear, and that is okay. You do no
 
 The simplest technique, "ask, skim a little, merge," over time produces just one thing: a gigantic black box.
 
-I measured the same agent on the same repository before and after refactoring it into better boxes: the messy repo was close to 30% more expensive. The test was informal and on a private company repository I cannot share, so you might try it yourself, or look at papers such as [RepoMod-Bench](https://arxiv.org/abs/2602.22518), of which I’ve only read the abstract and conclusion :). It will show you that, for an agent, **a 10,000-line project and a 50,000-line one are different games**.
+I measured the same agent on the same repository before and after refactoring it into better boxes: the messy repo cost more than 1.5 times as much. The test was informal and on a private company repository I cannot share, so you might try it yourself, or look at papers such as [RepoMod-Bench](https://arxiv.org/abs/2602.22518), of which I’ve only read the abstract and conclusion :). It will show you that, for an agent, **a 10,000-line project and a 50,000-line one are different games**.
 
 ![A stick figure with a confounded face stands next to one big black box, wider than a table and taller than the figure]({{ '/assets/images/box-big-black.svg' | relative_url }})
 
