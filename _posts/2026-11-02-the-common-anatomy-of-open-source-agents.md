@@ -31,15 +31,45 @@ User
 → LLM
 ```
 
-Then, if the model calls tools, the flow branches:
+Then, if the model calls tools, the flow branches into tool dispatch, approval and execution.
 
-```text
-Turn control
-→ Tool dispatch
-→ Approval policy
-→ Built-in tool, process executor, MCP client, or sub-agent
-→ Tool result
-→ Turn control
+
+```
+    User
+     │
+     ├──► Front end ───────┐
+     ├──► Chat channels ───┤
+     └──► Agent protocols ─┤
+               ┌───────────▼────────────┐
+               │ Gateway                │
+               └───────────┬────────────┘
+               ┌───────────▼────────────┐
+               │ Access control         │
+               └───────────┬────────────┘
+               ┌───────────▼────────────┐
+               │ Session runtime        │
+               └───────────┬────────────┘
+               ┌───────────▼────────────┐
+               │ Session store          │
+               └───────────┬────────────┘
+               ┌───────────▼────────────┐       ┌──────────────────┐
+               │ Turn control           ├──────►│ Tool dispatch    │
+               │                        │◄──┐   └────────┬─────────┘
+               └───────────┬────────────┘   │   ┌────────▼─────────┐
+               ┌───────────▼────────────┐   │   │ Approval policy  │
+               │ Prompt assembly        │   │   └────────┬─────────┘
+               └───────────┬────────────┘   │   ┌────────▼─────────┐
+               ┌───────────▼────────────┐   │   │ Built-in tools   │
+               │ Context management     │   │   │ Process executor │
+               └───────────┬────────────┘   │   │ MCP client       │
+               ┌───────────▼────────────┐   │   │ Sub-agent        │
+               │ Provider adapter       │   │   └────────┬─────────┘
+               └───────────┬────────────┘   └────────────┘ tool results
+               ┌───────────▼────────────┐
+               │ Model transport        │
+               └───────────┬────────────┘
+                           ▼
+                          LLM
 ```
 
 A **turn** is the work caused by one user message. A **round** is one model call plus the tool calls it produces. One turn may contain many rounds.
@@ -147,6 +177,42 @@ Most products keep sub-agent depth shallow. That avoids runaway trees, confusing
 ## Process shape changes the product
 
 The same architecture can run in very different process layouts.
+
+```
+ 1. ONE PROCESS                        2. A LOCAL SERVER AND ITS CLIENTS
+
+ ┌────────────────────────────┐        ┌─────────────┐   ┌──────────────────┐
+ │ Front end, agent loop,     │        │ Terminal UI │   │ Desktop app, IDE,│
+ │ tools                      │        └──────┬──────┘   │ web app, phone   │
+ └─────────────┬──────────────┘               │          └───────┬──────────┘
+ ┌─────────────▼──────────────┐               └────────┬─────────┘
+ │ Child processes:           │           ┌────────────▼───────────┐
+ │ shells, MCP servers        │           │ Server or daemon:      │
+ └────────────────────────────┘           │ sessions, turns, tools │
+                                          └────────────┬───────────┘
+                                          ┌────────────▼───────────┐
+                                          │ Child processes,       │
+                                          │ sandbox                │
+                                          └────────────────────────┘
+
+
+ 3. REPLICAS WITH SHARED STATE         4. EXECUTION ELSEWHERE
+
+          ┌──────────┐                 ┌────────────────────────┐
+          │ Browsers │                 │ Server: the model loop │
+          └────┬─────┘                 └─────┬──────────────────┘
+      ┌────────┴────────┐                    ├──► Container per conversation
+ ┌────▼──────┐    ┌─────▼─────┐              │
+ │ Replica 1 │    │ Replica N │              ├──► Remote executor or dev box
+ └────┬──────┘    └─────┬─────┘              │
+      ├─────────────────┤                    └──► The user's device or browser
+      │                 │
+ ┌────▼───────────┐ ┌───▼───────────┐
+ │ Redis: pub/sub,│ │ Database:     │
+ │ stream buffers,│ │ conversations │
+ │ jobs           │ └───────────────┘
+ └────────────────┘
+```
 
 ### 1. One process
 
