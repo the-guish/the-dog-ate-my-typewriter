@@ -27,7 +27,7 @@ This distinctive way to compare architectures lets us __discover__ each team's d
 
 Then we clustered the responsibilities. Two responsibilities belong together when the products keep them in the same module. We named the clusters, ranked them by importance, and drew the twenty-nine most important. The grouping and the positions come from the code. The names, the ranking and the cut at twenty-nine are our judgment.
 
-![The twenty-nine clusters of responsibilities: the main line from the user to the model runs down the middle, the tool side branches left from Turn control, the prompt side right]({{ '/assets/images/agent-clusters.svg' | relative_url }})
+![The twenty-nine clusters of responsibilities, sized by lines of code: the main line from the user to the model runs down the middle, the tool side branches left from Turn control, the prompt side right]({{ '/assets/images/agent-clusters.svg' | relative_url }})
 
 
 That provides a wider glance. The rest of this article follows the main flow only: the path of one prompt from the user to the model and back, with the branch for tools. 

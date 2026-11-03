@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 844 808" width="844" height="808" font-family="ui-monospace, Menlo, Consolas, 'Liberation Mono', monospace" role="img" aria-labelledby="t">
-  <title id="t">The twenty-nine clusters of responsibilities: the main line from the user to the model runs down the middle, the tool side branches left from Turn control, the prompt side right</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1032 968" width="1032" height="968" font-family="ui-monospace, Menlo, Consolas, 'Liberation Mono', monospace" role="img" aria-labelledby="t">
+  <title id="t">The twenty-nine clusters of responsibilities, sized by lines of code: the main line from the user to the model runs down the middle, the tool side branches left from Turn control, the prompt side right</title>
   <style>
     .shape { stroke: #222; stroke-width: 1.5; stroke-linejoin: round; }
     .light { fill: #eeeeea; } .mid { fill: #c8c8c4; } .main { fill: #555; }
@@ -9,108 +9,117 @@
     text.note { font-size: 12px; fill: #666; }
   </style>
   <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker></defs>
-  <line class="edge" x1="422" y1="54.0" x2="422" y2="76.0" marker-end="url(#arrow)"/>
-  <line class="edge" x1="422" y1="118.0" x2="422" y2="140.0" marker-end="url(#arrow)"/>
-  <line class="edge" x1="422" y1="182.0" x2="422" y2="204.0" marker-end="url(#arrow)"/>
-  <line class="edge" x1="422" y1="246.0" x2="422" y2="268.0" marker-end="url(#arrow)"/>
-  <line class="edge" x1="422" y1="310.0" x2="422" y2="332.0" marker-end="url(#arrow)"/>
-  <line class="edge" x1="422" y1="374.0" x2="422" y2="396.0" marker-end="url(#arrow)"/>
-  <line class="edge" x1="422" y1="438.0" x2="422" y2="460.0" marker-end="url(#arrow)"/>
-  <line class="edge" x1="422" y1="502.0" x2="422" y2="524.0" marker-end="url(#arrow)"/>
-  <line class="edge" x1="422" y1="566.0" x2="422" y2="588.0" marker-end="url(#arrow)"/>
-  <line class="edge" x1="422" y1="630.0" x2="422" y2="652.0" marker-end="url(#arrow)"/>
-  <line class="edge" x1="422" y1="694.0" x2="422" y2="716.0" marker-end="url(#arrow)"/>
-  <line class="edge" x1="354.0" y1="162" x2="320.0" y2="162" marker-end="url(#arrow)"/>
-  <line class="edge" x1="354.0" y1="354" x2="320.0" y2="354" marker-end="url(#arrow)"/>
-  <polyline class="edge" points="336.0,354 336.0,290 320.0,290" marker-end="url(#arrow)"/>
-  <line class="edge" x1="354.0" y1="418" x2="320.0" y2="418" marker-end="url(#arrow)"/>
-  <line class="edge" x1="182.0" y1="418" x2="148.0" y2="418" marker-end="url(#arrow)"/>
-  <line class="edge" x1="250" y1="438.0" x2="250" y2="460.0" marker-end="url(#arrow)"/>
-  <line class="edge" x1="182.0" y1="482" x2="148.0" y2="482" marker-end="url(#arrow)"/>
-  <line class="edge" x1="250" y1="502.0" x2="250" y2="524.0" marker-end="url(#arrow)"/>
-  <polyline class="edge" points="206.0,502.0 206.0,514.0 78,514.0 78,524.0" marker-end="url(#arrow)"/>
-  <line class="edge" x1="78" y1="566.0" x2="78" y2="588.0" marker-end="url(#arrow)"/>
-  <line class="edge" x1="78" y1="630.0" x2="78" y2="652.0" marker-end="url(#arrow)"/>
-  <line class="edge" x1="490.0" y1="418" x2="508.0" y2="418"/>
-  <line class="edge" x1="508.0" y1="290" x2="508.0" y2="546"/>
-  <line class="edge" x1="508.0" y1="290" x2="524.0" y2="290" marker-end="url(#arrow)"/>
-  <line class="edge" x1="508.0" y1="354" x2="524.0" y2="354" marker-end="url(#arrow)"/>
-  <line class="edge" x1="508.0" y1="418" x2="524.0" y2="418" marker-end="url(#arrow)"/>
-  <line class="edge" x1="508.0" y1="482" x2="524.0" y2="482" marker-end="url(#arrow)"/>
-  <line class="edge" x1="508.0" y1="546" x2="524.0" y2="546" marker-end="url(#arrow)"/>
-  <line class="edge" x1="662.0" y1="418" x2="680.0" y2="418"/>
-  <line class="edge" x1="680.0" y1="354" x2="680.0" y2="482"/>
-  <line class="edge" x1="680.0" y1="354" x2="696.0" y2="354" marker-end="url(#arrow)"/>
-  <line class="edge" x1="680.0" y1="418" x2="696.0" y2="418" marker-end="url(#arrow)"/>
-  <line class="edge" x1="680.0" y1="482" x2="696.0" y2="482" marker-end="url(#arrow)"/>
-  <rect class="shape light" x="354.0" y="14.0" width="136" height="40" rx="20.0"/>
-  <text x="422" y="35.0">User</text>
-  <rect class="shape mid" x="354.0" y="78.0" width="136" height="40" rx="4"/>
-  <text x="422" y="99.0">Front end</text>
-  <rect class="shape mid" x="354.0" y="142.0" width="136" height="40" rx="4"/>
-  <text x="422" y="163.0">Gateway</text>
-  <rect class="shape mid" x="354.0" y="206.0" width="136" height="40" rx="4"/>
-  <text x="422" y="227.0">Access control</text>
-  <rect class="shape mid" x="354.0" y="270.0" width="136" height="40" rx="4"/>
-  <text x="422" y="291.0">Session store</text>
-  <rect class="shape mid" x="354.0" y="334.0" width="136" height="40" rx="4"/>
-  <text x="422" y="355.0">Session runtime</text>
-  <rect class="shape main" x="354.0" y="398.0" width="136" height="40" rx="4"/>
-  <text x="422" y="419.0" class="on-main">Turn control</text>
-  <rect class="shape mid" x="354.0" y="462.0" width="136" height="40" rx="4"/>
-  <text x="422" y="483.0">Model choice</text>
-  <rect class="shape mid" x="354.0" y="526.0" width="136" height="40" rx="4"/>
-  <text x="422" y="547.0">Usage and cost</text>
-  <rect class="shape mid" x="354.0" y="590.0" width="136" height="40" rx="4"/>
-  <text x="422" y="611.0">Model transport</text>
-  <rect class="shape mid" x="354.0" y="654.0" width="136" height="40" rx="4"/>
-  <text x="422" y="675.0">Provider adapter</text>
-  <rect class="shape light" x="354.0" y="718.0" width="136" height="40" rx="20.0"/>
-  <text x="422" y="739.0">LLM</text>
-  <rect class="shape light" x="182.0" y="142.0" width="136" height="40" rx="4"/>
-  <text x="250" y="156.0">Files and</text>
-  <text x="250" y="170.0">attachments</text>
-  <rect class="shape light" x="182.0" y="270.0" width="136" height="40" rx="4"/>
-  <text x="250" y="284.0">Configuration</text>
-  <text x="250" y="298.0">and trust</text>
-  <rect class="shape light" x="182.0" y="334.0" width="136" height="40" rx="4"/>
-  <text x="250" y="355.0">Logging and audit</text>
-  <rect class="shape light" x="182.0" y="398.0" width="136" height="40" rx="4"/>
-  <text x="250" y="419.0">Tool dispatch</text>
-  <rect class="shape light" x="10.0" y="398.0" width="136" height="40" rx="4"/>
-  <text x="78" y="412.0">Oversized tool</text>
-  <text x="78" y="426.0">results</text>
-  <rect class="shape light" x="182.0" y="462.0" width="136" height="40" rx="4"/>
-  <text x="250" y="483.0">Approval policy</text>
-  <rect class="shape light" x="10.0" y="462.0" width="136" height="40" rx="4"/>
-  <text x="78" y="483.0">Sub-agents</text>
-  <rect class="shape light" x="10.0" y="526.0" width="136" height="40" rx="4"/>
-  <text x="78" y="547.0">Built-in tools</text>
-  <rect class="shape light" x="182.0" y="526.0" width="136" height="40" rx="4"/>
-  <text x="250" y="547.0">MCP client</text>
-  <rect class="shape light" x="10.0" y="590.0" width="136" height="40" rx="4"/>
-  <text x="78" y="611.0">Process executor</text>
-  <rect class="shape light" x="10.0" y="654.0" width="136" height="40" rx="4"/>
-  <text x="78" y="668.0">Execution backend</text>
-  <text x="78" y="682.0">and egress</text>
-  <rect class="shape light" x="526.0" y="270.0" width="136" height="40" rx="4"/>
-  <text x="594" y="291.0">Agent definitions</text>
-  <rect class="shape light" x="526.0" y="334.0" width="136" height="40" rx="4"/>
-  <text x="594" y="355.0">Modes</text>
-  <rect class="shape light" x="526.0" y="398.0" width="136" height="40" rx="4"/>
-  <text x="594" y="419.0">Prompt assembly</text>
-  <rect class="shape light" x="526.0" y="462.0" width="136" height="40" rx="4"/>
-  <text x="594" y="476.0">Context size</text>
-  <text x="594" y="490.0">management</text>
-  <rect class="shape light" x="526.0" y="526.0" width="136" height="40" rx="4"/>
-  <text x="594" y="540.0">Plugins, skills</text>
-  <text x="594" y="554.0">and hooks</text>
-  <rect class="shape light" x="698.0" y="334.0" width="136" height="40" rx="4"/>
-  <text x="766" y="355.0">Long-term memory</text>
-  <rect class="shape light" x="698.0" y="398.0" width="136" height="40" rx="4"/>
-  <text x="766" y="419.0">Skills index</text>
-  <rect class="shape light" x="698.0" y="462.0" width="136" height="40" rx="4"/>
-  <text x="766" y="476.0">Attachments into</text>
-  <text x="766" y="490.0">model input</text>
-  <text class="note" x="422" y="786">Arrows mean “calls” or “uses”. Results and events travel back the same way.</text>
+  <line class="edge" x1="516.0" y1="54.0" x2="516.0" y2="74.0" marker-end="url(#arrow)"/>
+  <line class="edge" x1="516.0" y1="132.0" x2="516.0" y2="148.0" marker-end="url(#arrow)"/>
+  <line class="edge" x1="516.0" y1="198.0" x2="516.0" y2="222.0" marker-end="url(#arrow)"/>
+  <line class="edge" x1="516.0" y1="264.0" x2="516.0" y2="288.0" marker-end="url(#arrow)"/>
+  <line class="edge" x1="516.0" y1="338.0" x2="516.0" y2="358.0" marker-end="url(#arrow)"/>
+  <line class="edge" x1="516.0" y1="408.0" x2="516.0" y2="428.0" marker-end="url(#arrow)"/>
+  <line class="edge" x1="516.0" y1="478.0" x2="516.0" y2="502.0" marker-end="url(#arrow)"/>
+  <line class="edge" x1="516.0" y1="544.0" x2="516.0" y2="572.0" marker-end="url(#arrow)"/>
+  <line class="edge" x1="516.0" y1="614.0" x2="516.0" y2="638.0" marker-end="url(#arrow)"/>
+  <line class="edge" x1="516.0" y1="688.0" x2="516.0" y2="708.0" marker-end="url(#arrow)"/>
+  <line class="edge" x1="516.0" y1="758.0" x2="516.0" y2="782.0" marker-end="url(#arrow)"/>
+  <line class="edge" x1="433.0" y1="174.0" x2="376.0" y2="174.0" marker-end="url(#arrow)"/>
+  <line class="edge" x1="433.0" y1="384.0" x2="391.0" y2="384.0" marker-end="url(#arrow)"/>
+  <line class="edge" x1="433.0" y1="454.0" x2="391.0" y2="454.0" marker-end="url(#arrow)"/>
+  <line class="edge" x1="223.0" y1="454.0" x2="146.0" y2="454.0" marker-end="url(#arrow)"/>
+  <line class="edge" x1="223.0" y1="524.0" x2="166.0" y2="524.0" marker-end="url(#arrow)"/>
+  <line class="edge" x1="306.0" y1="478.0" x2="306.0" y2="498.0" marker-end="url(#arrow)"/>
+  <line class="edge" x1="306.0" y1="548.0" x2="306.0" y2="568.0" marker-end="url(#arrow)"/>
+  <line class="edge" x1="96.0" y1="618.0" x2="96.0" y2="638.0" marker-end="url(#arrow)"/>
+  <line class="edge" x1="96.0" y1="688.0" x2="96.0" y2="708.0" marker-end="url(#arrow)"/>
+  <polyline class="edge" points="411.0,384.0 411.0,314.0 391.0,314.0" marker-end="url(#arrow)"/>
+  <polyline class="edge" points="262.0,548.0 262.0,559.0 96.0,559.0 96.0,568.0" marker-end="url(#arrow)"/>
+  <line class="edge" x1="599.0" y1="454.0" x2="621.0" y2="454.0"/>
+  <line class="edge" x1="621.0" y1="314.0" x2="621.0" y2="594.0"/>
+  <line class="edge" x1="621.0" y1="314.0" x2="656.0" y2="314.0" marker-end="url(#arrow)"/>
+  <line class="edge" x1="621.0" y1="384.0" x2="676.0" y2="384.0" marker-end="url(#arrow)"/>
+  <line class="edge" x1="621.0" y1="454.0" x2="656.0" y2="454.0" marker-end="url(#arrow)"/>
+  <line class="edge" x1="621.0" y1="524.0" x2="656.0" y2="524.0" marker-end="url(#arrow)"/>
+  <line class="edge" x1="621.0" y1="594.0" x2="641.0" y2="594.0" marker-end="url(#arrow)"/>
+  <line class="edge" x1="794.0" y1="454.0" x2="831.0" y2="454.0"/>
+  <line class="edge" x1="831.0" y1="384.0" x2="831.0" y2="524.0"/>
+  <line class="edge" x1="831.0" y1="384.0" x2="866.0" y2="384.0" marker-end="url(#arrow)"/>
+  <line class="edge" x1="831.0" y1="454.0" x2="886.0" y2="454.0" marker-end="url(#arrow)"/>
+  <line class="edge" x1="831.0" y1="524.0" x2="866.0" y2="524.0" marker-end="url(#arrow)"/>
+  <rect class="shape light" x="448.0" y="14.0" width="136" height="40" rx="20.0"/>
+  <text x="516" y="35.0">User</text>
+  <rect class="shape mid" x="420.0" y="76.0" width="192" height="56" rx="4"/>
+  <text x="516" y="105.0">Front end</text>
+  <rect class="shape mid" x="433.0" y="150.0" width="166" height="48" rx="4"/>
+  <text x="516" y="175.0">Gateway</text>
+  <rect class="shape mid" x="448.0" y="224.0" width="136" height="40" rx="4"/>
+  <text x="516" y="245.0">Access control</text>
+  <rect class="shape mid" x="433.0" y="290.0" width="166" height="48" rx="4"/>
+  <text x="516" y="315.0">Session store</text>
+  <rect class="shape mid" x="433.0" y="360.0" width="166" height="48" rx="4"/>
+  <text x="516" y="385.0">Session runtime</text>
+  <rect class="shape main" x="433.0" y="430.0" width="166" height="48" rx="4"/>
+  <text x="516" y="455.0" class="on-main">Turn control</text>
+  <rect class="shape mid" x="448.0" y="504.0" width="136" height="40" rx="4"/>
+  <text x="516" y="525.0">Model choice</text>
+  <rect class="shape mid" x="448.0" y="574.0" width="136" height="40" rx="4"/>
+  <text x="516" y="595.0">Usage and cost</text>
+  <rect class="shape mid" x="433.0" y="640.0" width="166" height="48" rx="4"/>
+  <text x="516" y="665.0">Model transport</text>
+  <rect class="shape mid" x="433.0" y="710.0" width="166" height="48" rx="4"/>
+  <text x="516" y="735.0">Provider adapter</text>
+  <rect class="shape light" x="448.0" y="784.0" width="136" height="40" rx="20.0"/>
+  <text x="516" y="805.0">LLM</text>
+  <rect class="shape light" x="238.0" y="154.0" width="136" height="40" rx="4"/>
+  <text x="306" y="168.0">Files and</text>
+  <text x="306" y="182.0">attachments</text>
+  <rect class="shape light" x="223.0" y="290.0" width="166" height="48" rx="4"/>
+  <text x="306" y="308.0">Configuration</text>
+  <text x="306" y="322.0">and trust</text>
+  <rect class="shape light" x="223.0" y="360.0" width="166" height="48" rx="4"/>
+  <text x="306" y="385.0">Logging and audit</text>
+  <rect class="shape light" x="223.0" y="430.0" width="166" height="48" rx="4"/>
+  <text x="306" y="455.0">Tool dispatch</text>
+  <rect class="shape light" x="48.0" y="440.0" width="96" height="28" rx="4"/>
+  <text x="96" y="449.5" style="font-size:10px">Oversized tool</text>
+  <text x="96" y="460.5" style="font-size:10px">results</text>
+  <rect class="shape light" x="223.0" y="500.0" width="166" height="48" rx="4"/>
+  <text x="306" y="525.0">Approval policy</text>
+  <rect class="shape light" x="28.0" y="504.0" width="136" height="40" rx="4"/>
+  <text x="96" y="525.0">Sub-agents</text>
+  <rect class="shape light" x="13.0" y="570.0" width="166" height="48" rx="4"/>
+  <text x="96" y="595.0">Built-in tools</text>
+  <rect class="shape light" x="223.0" y="570.0" width="166" height="48" rx="4"/>
+  <text x="306" y="595.0">MCP client</text>
+  <rect class="shape light" x="13.0" y="640.0" width="166" height="48" rx="4"/>
+  <text x="96" y="665.0">Process executor</text>
+  <rect class="shape light" x="13.0" y="710.0" width="166" height="48" rx="4"/>
+  <text x="96" y="728.0">Execution backend</text>
+  <text x="96" y="742.0">and egress</text>
+  <rect class="shape light" x="658.0" y="294.0" width="136" height="40" rx="4"/>
+  <text x="726" y="315.0">Agent definitions</text>
+  <rect class="shape light" x="678.0" y="370.0" width="96" height="28" rx="4"/>
+  <text x="726" y="385.0" style="font-size:10px">Modes</text>
+  <rect class="shape light" x="658.0" y="434.0" width="136" height="40" rx="4"/>
+  <text x="726" y="455.0">Prompt assembly</text>
+  <rect class="shape light" x="658.0" y="504.0" width="136" height="40" rx="4"/>
+  <text x="726" y="518.0">Context size</text>
+  <text x="726" y="532.0">management</text>
+  <rect class="shape light" x="643.0" y="570.0" width="166" height="48" rx="4"/>
+  <text x="726" y="588.0">Plugins, skills</text>
+  <text x="726" y="602.0">and hooks</text>
+  <rect class="shape light" x="868.0" y="364.0" width="136" height="40" rx="4"/>
+  <text x="936" y="385.0">Long-term memory</text>
+  <rect class="shape light" x="888.0" y="440.0" width="96" height="28" rx="4"/>
+  <text x="936" y="455.0" style="font-size:10px">Skills index</text>
+  <rect class="shape light" x="868.0" y="504.0" width="136" height="40" rx="4"/>
+  <text x="936" y="518.0">Attachments into</text>
+  <text x="936" y="532.0">model input</text>
+  <text class="note" x="516" y="882.0">Box area by median lines of code across the ten products, in Python-equivalent lines:</text>
+  <rect class="shape light" x="150.0" y="909.0" width="48" height="14" rx="3"/>
+  <text class="note" x="206.0" y="916.0" style="text-anchor:start">1x under 500</text>
+  <rect class="shape light" x="328.0" y="906.0" width="68" height="20" rx="3"/>
+  <text class="note" x="404.0" y="916.0" style="text-anchor:start">2x 500 to 3k</text>
+  <rect class="shape light" x="526.0" y="904.0" width="83" height="24" rx="3"/>
+  <text class="note" x="617.0" y="916.0" style="text-anchor:start">3x 3k to 10k</text>
+  <rect class="shape light" x="739.0" y="902.0" width="96" height="28" rx="3"/>
+  <text class="note" x="843.0" y="916.0" style="text-anchor:start">4x 10k and over</text>
+  <text class="note" x="516" y="950.0">Arrows mean “calls” or “uses”. Results and events travel back the same way.</text>
 </svg>
